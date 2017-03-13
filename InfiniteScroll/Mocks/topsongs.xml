@@ -1,0 +1,425 @@
+<feed xmlns:im="http://itunes.apple.com/rss" xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <id>
+        https://itunes.apple.com/us/rss/topsongs/limit=10/xml
+    </id>
+    <title>iTunes Store: Top Songs</title>
+    <updated>2017-03-12T16:23:01-07:00</updated>
+    <link rel="alternate" type="text/html" href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewTop?cc=us&amp;id=1&amp;popId=1"/>
+    <link rel="self" href="https://itunes.apple.com/us/rss/topsongs/limit=10/xml"/>
+    <icon>http://itunes.apple.com/favicon.ico</icon>
+    <author>
+        <name>iTunes Store</name>
+        <uri>http://www.apple.com/itunes/</uri>
+    </author>
+    <rights>Copyright 2008 Apple Inc.</rights>
+    <entry>
+        <updated>2017-03-12T16:23:01-07:00</updated>
+        <id im:id="1193701392">https://itunes.apple.com/us/album/shape-of-you/id1193701079?i=1193701392&amp;uo=2</id>
+        <title>Shape of You - Ed Sheeran</title>
+        <im:name>Shape of You</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/shape-of-you/id1193701079?i=1193701392&amp;uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Track" label="Track"/>
+        </im:contentType>
+        <category im:id="14" term="Pop" scheme="https://itunes.apple.com/us/genre/music-pop/id14?uo=2" label="Pop"/>
+        <link title="Preview" rel="enclosure" type="audio/x-m4a" href="http://audio.itunes.apple.com/apple-assets-us-std-000001/AudioPreview111/v4/65/ca/83/65ca8336-2e09-a0bb-a810-2a6b8864e770/mzaf_3545919152242528717.plus.aac.p.m4a" im:assetType="preview">
+        <im:duration>30000</im:duration>
+        </link>
+        <im:artist href="https://itunes.apple.com/us/artist/ed-sheeran/id183313439?uo=2">Ed Sheeran</im:artist>
+        <im:price amount="1.29000" currency="USD">$1.29</im:price>
+        <im:image height="55">
+        http://is3.mzstatic.com/image/thumb/Music122/v4/9a/35/95/9a3595c7-c675-fd74-352f-44e3638ac123/190295851286.jpg/55x55bb-85.jpg
+        </im:image>
+        <im:image height="60">
+        http://is1.mzstatic.com/image/thumb/Music122/v4/9a/35/95/9a3595c7-c675-fd74-352f-44e3638ac123/190295851286.jpg/60x60bb-85.jpg
+        </im:image>
+        <im:image height="170">
+        http://is1.mzstatic.com/image/thumb/Music122/v4/9a/35/95/9a3595c7-c675-fd74-352f-44e3638ac123/190295851286.jpg/170x170bb-85.jpg
+        </im:image>
+        <rights>
+        ℗ 2017 Asylum Records UK, a division of Atlantic Records UK, a Warner Music Group company.
+        </rights>
+        <im:releaseDate label="March 3, 2017">2017-03-03T00:00:00-07:00</im:releaseDate>
+        <im:collection>
+        <im:name>÷ (Deluxe)</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/deluxe/id1193701079?uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Album" label="Album"/>
+        </im:contentType>
+        </im:collection>
+        <content type="html">
+            <table border="0" width="100%"> <tr> <td> <table border="0" width="100%" cellspacing="0" cellpadding="0"> <tr valign="top" align="left"> <td align="center" width="166" valign="top"> <a href="https://itunes.apple.com/us/album/shape-of-you/id1193701079?i=1193701392&amp;uo=2"><img border="0" alt="Ed Sheeran - Shape of You artwork" src="http://is1.mzstatic.com/image/thumb/Music122/v4/9a/35/95/9a3595c7-c675-fd74-352f-44e3638ac123/190295851286.jpg/170x170bb-85.jpg" /></a> </td> <td width="10"><img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /></td> <td width="95%"> <b><a href="https://itunes.apple.com/us/album/shape-of-you/id1193701079?i=1193701392&amp;uo=2">Shape of You</a></b><br/> <a href="https://itunes.apple.com/us/album/deluxe/id1193701079?uo=2">÷ (Deluxe)</a><br/> <a href="https://itunes.apple.com/us/artist/ed-sheeran/id183313439?uo=2">Ed Sheeran</a> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> <br/> <b>Genre:</b> <a href="https://itunes.apple.com/us/genre/music-pop/id14?uo=2">Pop</a> <br/> <b>Price:</b> $1.29 <br/> <b>Release Date:</b> March 3, 2017 </font> </td> </tr> </table> </td> </tr> <tr> <td> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> &amp;#169; ℗ 2017 Asylum Records UK, a division of Atlantic Records UK, a Warner Music Group company.</font> </td> </tr> </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2017-03-12T16:23:01-07:00</updated>
+        <id im:id="1161504043">
+            https://itunes.apple.com/us/album/thats-what-i-like/id1161503945?i=1161504043&amp;uo=2
+        </id>
+        <title>That’s What I Like - Bruno Mars</title>
+        <im:name>That’s What I Like</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/thats-what-i-like/id1161503945?i=1161504043&amp;uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Track" label="Track"/>
+        </im:contentType>
+        <category im:id="14" term="Pop" scheme="https://itunes.apple.com/us/genre/music-pop/id14?uo=2" label="Pop"/>
+        <link title="Preview" rel="enclosure" type="audio/x-m4a" href="http://audio.itunes.apple.com/apple-assets-us-std-000001/AudioPreview71/v4/ca/7f/28/ca7f2818-514a-5a6f-ac63-bd420da38a0c/mzaf_3303110486375225949.plus.aac.p.m4a" im:assetType="preview">
+        <im:duration>30000</im:duration>
+        </link>
+        <im:artist href="https://itunes.apple.com/us/artist/bruno-mars/id278873078?uo=2">Bruno Mars</im:artist>
+        <im:price amount="1.29000" currency="USD">$1.29</im:price>
+        <im:image height="55">
+        http://is2.mzstatic.com/image/thumb/Music62/v4/40/98/ed/4098edc3-1ae9-4da7-4778-b9d3b8b2a846/075679904119.jpg/55x55bb-85.jpg
+        </im:image>
+        <im:image height="60">
+        http://is3.mzstatic.com/image/thumb/Music62/v4/40/98/ed/4098edc3-1ae9-4da7-4778-b9d3b8b2a846/075679904119.jpg/60x60bb-85.jpg
+        </im:image>
+        <im:image height="170">
+        http://is3.mzstatic.com/image/thumb/Music62/v4/40/98/ed/4098edc3-1ae9-4da7-4778-b9d3b8b2a846/075679904119.jpg/170x170bb-85.jpg
+        </im:image>
+        <rights>
+        ℗ 2016 Atlantic Recording Corporation for the United States and WEA International Inc. for the world outside of the United States. A Warner Music Group Company
+        </rights>
+        <im:releaseDate label="November 18, 2016">2016-11-18T00:00:00-07:00</im:releaseDate>
+        <im:collection>
+        <im:name>24K Magic</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/24k-magic/id1161503945?uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Album" label="Album"/>
+        </im:contentType>
+        </im:collection>
+        <content type="html">
+            <table border="0" width="100%"> <tr> <td> <table border="0" width="100%" cellspacing="0" cellpadding="0"> <tr valign="top" align="left"> <td align="center" width="166" valign="top"> <a href="https://itunes.apple.com/us/album/thats-what-i-like/id1161503945?i=1161504043&amp;uo=2"><img border="0" alt="Bruno Mars - That’s What I Like artwork" src="http://is3.mzstatic.com/image/thumb/Music62/v4/40/98/ed/4098edc3-1ae9-4da7-4778-b9d3b8b2a846/075679904119.jpg/170x170bb-85.jpg" /></a> </td> <td width="10"><img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /></td> <td width="95%"> <b><a href="https://itunes.apple.com/us/album/thats-what-i-like/id1161503945?i=1161504043&amp;uo=2">That’s What I Like</a></b><br/> <a href="https://itunes.apple.com/us/album/24k-magic/id1161503945?uo=2">24K Magic</a><br/> <a href="https://itunes.apple.com/us/artist/bruno-mars/id278873078?uo=2">Bruno Mars</a> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> <br/> <b>Genre:</b> <a href="https://itunes.apple.com/us/genre/music-pop/id14?uo=2">Pop</a> <br/> <b>Price:</b> $1.29 <br/> <b>Release Date:</b> November 18, 2016 </font> </td> </tr> </table> </td> </tr> <tr> <td> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> &amp;#169; ℗ 2016 Atlantic Recording Corporation for the United States and WEA International Inc. for the world outside of the United States. A Warner Music Group Company</font> </td> </tr> </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2017-03-12T16:23:01-07:00</updated>
+        <id im:id="1207120448">
+            https://itunes.apple.com/us/album/something-just-like-this/id1207120422?i=1207120448&amp;uo=2
+        </id>
+        <title>
+        Something Just Like This - The Chainsmokers &amp; Coldplay
+        </title>
+        <im:name>Something Just Like This</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/something-just-like-this/id1207120422?i=1207120448&amp;uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Track" label="Track"/>
+        </im:contentType>
+        <category im:id="17" term="Dance" scheme="https://itunes.apple.com/us/genre/music-dance/id17?uo=2" label="Dance"/>
+        <link title="Preview" rel="enclosure" type="audio/x-m4a" href="http://audio.itunes.apple.com/apple-assets-us-std-000001/AudioPreview111/v4/39/59/5f/39595fee-9b21-6820-7235-b77ff16493ac/mzaf_5991616013179560024.plus.aac.p.m4a" im:assetType="preview">
+        <im:duration>30000</im:duration>
+        </link>
+        <im:artist href="https://itunes.apple.com/us/artist/the-chainsmokers/id580391756?uo=2">The Chainsmokers &amp; Coldplay</im:artist>
+        <im:price amount="1.29000" currency="USD">$1.29</im:price>
+        <im:image height="55">
+        http://is2.mzstatic.com/image/thumb/Music122/v4/43/0b/d5/430bd507-bb4a-c26a-fdbc-98f713d728c1/886446379289.jpg/55x55bb-85.jpg
+        </im:image>
+        <im:image height="60">
+        http://is3.mzstatic.com/image/thumb/Music122/v4/43/0b/d5/430bd507-bb4a-c26a-fdbc-98f713d728c1/886446379289.jpg/60x60bb-85.jpg
+        </im:image>
+        <im:image height="170">
+        http://is2.mzstatic.com/image/thumb/Music122/v4/43/0b/d5/430bd507-bb4a-c26a-fdbc-98f713d728c1/886446379289.jpg/170x170bb-85.jpg
+        </im:image>
+        <rights>℗ 2017 Disruptor Records/Columbia Records</rights>
+        <im:releaseDate label="April 7, 2017">2017-04-07T00:00:00-07:00</im:releaseDate>
+        <im:collection>
+        <im:name>Memories...Do Not Open</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/memories-do-not-open/id1207120422?uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Album" label="Album"/>
+        </im:contentType>
+        </im:collection>
+        <content type="html">
+            <table border="0" width="100%"> <tr> <td> <table border="0" width="100%" cellspacing="0" cellpadding="0"> <tr valign="top" align="left"> <td align="center" width="166" valign="top"> <a href="https://itunes.apple.com/us/album/something-just-like-this/id1207120422?i=1207120448&amp;uo=2"><img border="0" alt="The Chainsmokers &amp; Coldplay - Something Just Like This artwork" src="http://is2.mzstatic.com/image/thumb/Music122/v4/43/0b/d5/430bd507-bb4a-c26a-fdbc-98f713d728c1/886446379289.jpg/170x170bb-85.jpg" /></a> </td> <td width="10"><img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /></td> <td width="95%"> <b><a href="https://itunes.apple.com/us/album/something-just-like-this/id1207120422?i=1207120448&amp;uo=2">Something Just Like This</a></b><br/> <a href="https://itunes.apple.com/us/album/memories-do-not-open/id1207120422?uo=2">Memories...Do Not Open</a><br/> <a href="https://itunes.apple.com/us/artist/the-chainsmokers/id580391756?uo=2">The Chainsmokers &amp; Coldplay</a> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> <br/> <b>Genre:</b> <a href="https://itunes.apple.com/us/genre/music-dance/id17?uo=2">Dance</a> <br/> <b>Price:</b> $1.29 <br/> <b>Expected Release Date:</b> April 7, 2017 </font> </td> </tr> </table> </td> </tr> <tr> <td> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> &amp;#169; ℗ 2017 Disruptor Records/Columbia Records</font> </td> </tr> </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2017-03-12T16:23:01-07:00</updated>
+        <id im:id="1193843927">
+            https://itunes.apple.com/us/album/i-dont-wanna-live-forever-fifty-shades-darker/id1193842483?i=1193843927&amp;uo=2
+        </id>
+        <title>
+        I Don’t Wanna Live Forever (Fifty Shades Darker) - ZAYN &amp; Taylor Swift
+        </title>
+        <im:name>I Don’t Wanna Live Forever (Fifty Shades Darker)</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/i-dont-wanna-live-forever-fifty-shades-darker/id1193842483?i=1193843927&amp;uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Track" label="Track"/>
+        </im:contentType>
+        <category im:id="16" term="Soundtrack" scheme="https://itunes.apple.com/us/genre/music-soundtrack/id16?uo=2" label="Soundtrack"/>
+        <link title="Preview" rel="enclosure" type="audio/x-m4a" href="http://audio.itunes.apple.com/apple-assets-us-std-000001/AudioPreview111/v4/de/97/25/de97251c-08ae-5042-d1a1-db89026e82d5/mzaf_2281112897833262953.plus.aac.p.m4a" im:assetType="preview">
+        <im:duration>30000</im:duration>
+        </link>
+        <im:artist href="https://itunes.apple.com/us/artist/zayn/id973181994?uo=2">ZAYN &amp; Taylor Swift</im:artist>
+        <im:price amount="0.69000" currency="USD">$0.69</im:price>
+        <im:image height="55">
+        http://is3.mzstatic.com/image/thumb/Music122/v4/0a/2d/dd/0a2dddc4-2d42-dfdd-7788-2b1b8726ef2e/UMG_cvrart_00602557372519_01_RGB72_1800x1800_17UMGIM01263.jpg/55x55bb-85.jpg
+        </im:image>
+        <im:image height="60">
+        http://is4.mzstatic.com/image/thumb/Music122/v4/0a/2d/dd/0a2dddc4-2d42-dfdd-7788-2b1b8726ef2e/UMG_cvrart_00602557372519_01_RGB72_1800x1800_17UMGIM01263.jpg/60x60bb-85.jpg
+        </im:image>
+        <im:image height="170">
+        http://is5.mzstatic.com/image/thumb/Music122/v4/0a/2d/dd/0a2dddc4-2d42-dfdd-7788-2b1b8726ef2e/UMG_cvrart_00602557372519_01_RGB72_1800x1800_17UMGIM01263.jpg/170x170bb-85.jpg
+        </im:image>
+        <rights>
+        ℗ 2017 Universal Studios and Republic Records, a division of UMG Recordings, Inc.
+        </rights>
+        <im:releaseDate label="February 10, 2017">2017-02-10T00:00:00-07:00</im:releaseDate>
+        <im:collection>
+        <im:name>
+        Fifty Shades Darker (Original Motion Picture Soundtrack)
+        </im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/fifty-shades-darker-original-motion-picture-soundtrack/id1193842483?uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Album" label="Album"/>
+        </im:contentType>
+        </im:collection>
+        <content type="html">
+            <table border="0" width="100%"> <tr> <td> <table border="0" width="100%" cellspacing="0" cellpadding="0"> <tr valign="top" align="left"> <td align="center" width="166" valign="top"> <a href="https://itunes.apple.com/us/album/i-dont-wanna-live-forever-fifty-shades-darker/id1193842483?i=1193843927&amp;uo=2"><img border="0" alt="ZAYN &amp; Taylor Swift - I Don’t Wanna Live Forever (Fifty Shades Darker) artwork" src="http://is5.mzstatic.com/image/thumb/Music122/v4/0a/2d/dd/0a2dddc4-2d42-dfdd-7788-2b1b8726ef2e/UMG_cvrart_00602557372519_01_RGB72_1800x1800_17UMGIM01263.jpg/170x170bb-85.jpg" /></a> </td> <td width="10"><img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /></td> <td width="95%"> <b><a href="https://itunes.apple.com/us/album/i-dont-wanna-live-forever-fifty-shades-darker/id1193842483?i=1193843927&amp;uo=2">I Don’t Wanna Live Forever (Fifty Shades Darker)</a></b><br/> <a href="https://itunes.apple.com/us/album/fifty-shades-darker-original-motion-picture-soundtrack/id1193842483?uo=2">Fifty Shades Darker (Original Motion Picture Soundtrack)</a><br/> <a href="https://itunes.apple.com/us/artist/zayn/id973181994?uo=2">ZAYN &amp; Taylor Swift</a> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> <br/> <b>Genre:</b> <a href="https://itunes.apple.com/us/genre/music-soundtrack/id16?uo=2">Soundtrack</a> <br/> <b>Price:</b> $0.69 <br/> <b>Release Date:</b> February 10, 2017 </font> </td> </tr> </table> </td> </tr> <tr> <td> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> &amp;#169; ℗ 2017 Universal Studios and Republic Records, a division of UMG Recordings, Inc.</font> </td> </tr> </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2017-03-12T16:23:01-07:00</updated>
+        <id im:id="1164046335">
+            https://itunes.apple.com/us/album/rockabye-feat-sean-paul-anne-marie/id1164046086?i=1164046335&amp;uo=2
+        </id>
+        <title>
+        Rockabye (feat. Sean Paul &amp; Anne-Marie) - Clean Bandit
+        </title>
+        <im:name>Rockabye (feat. Sean Paul &amp; Anne-Marie)</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/rockabye-feat-sean-paul-anne-marie/id1164046086?i=1164046335&amp;uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Track" label="Track"/>
+        </im:contentType>
+        <category im:id="17" term="Dance" scheme="https://itunes.apple.com/us/genre/music-dance/id17?uo=2" label="Dance"/>
+        <link title="Preview" rel="enclosure" type="audio/x-m4a" href="http://audio.itunes.apple.com/apple-assets-us-std-000001/AudioPreview62/v4/d6/03/33/d6033314-bcd2-c04c-d4d2-f122d9e08aa7/mzaf_9219307760149533298.plus.aac.p.m4a" im:assetType="preview">
+        <im:duration>30000</im:duration>
+        </link>
+        <im:artist href="https://itunes.apple.com/us/artist/clean-bandit/id463049461?uo=2">Clean Bandit</im:artist>
+        <im:price amount="0.69000" currency="USD">$0.69</im:price>
+        <im:image height="55">
+        http://is3.mzstatic.com/image/thumb/Music71/v4/e3/98/64/e39864cb-5718-13f3-9c97-34e08ff002c0/190295887728.jpg/55x55bb-85.jpg
+        </im:image>
+        <im:image height="60">
+        http://is4.mzstatic.com/image/thumb/Music71/v4/e3/98/64/e39864cb-5718-13f3-9c97-34e08ff002c0/190295887728.jpg/60x60bb-85.jpg
+        </im:image>
+        <im:image height="170">
+        http://is5.mzstatic.com/image/thumb/Music71/v4/e3/98/64/e39864cb-5718-13f3-9c97-34e08ff002c0/190295887728.jpg/170x170bb-85.jpg
+        </im:image>
+        <rights>
+        ℗ 2016 Atlantic Records UK, a Warner Music Group company
+        </rights>
+        <im:releaseDate label="October 21, 2016">2016-10-21T00:00:00-07:00</im:releaseDate>
+        <im:collection>
+        <im:name>Rockabye (feat. Sean Paul &amp; Anne-Marie) - Single</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/rockabye-feat-sean-paul-anne-marie-single/id1164046086?uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Album" label="Album"/>
+        </im:contentType>
+        </im:collection>
+        <content type="html">
+            <table border="0" width="100%"> <tr> <td> <table border="0" width="100%" cellspacing="0" cellpadding="0"> <tr valign="top" align="left"> <td align="center" width="166" valign="top"> <a href="https://itunes.apple.com/us/album/rockabye-feat-sean-paul-anne-marie/id1164046086?i=1164046335&amp;uo=2"><img border="0" alt="Clean Bandit - Rockabye (feat. Sean Paul &amp; Anne-Marie) artwork" src="http://is5.mzstatic.com/image/thumb/Music71/v4/e3/98/64/e39864cb-5718-13f3-9c97-34e08ff002c0/190295887728.jpg/170x170bb-85.jpg" /></a> </td> <td width="10"><img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /></td> <td width="95%"> <b><a href="https://itunes.apple.com/us/album/rockabye-feat-sean-paul-anne-marie/id1164046086?i=1164046335&amp;uo=2">Rockabye (feat. Sean Paul &amp; Anne-Marie)</a></b><br/> <a href="https://itunes.apple.com/us/album/rockabye-feat-sean-paul-anne-marie-single/id1164046086?uo=2">Rockabye (feat. Sean Paul &amp; Anne-Marie) - Single</a><br/> <a href="https://itunes.apple.com/us/artist/clean-bandit/id463049461?uo=2">Clean Bandit</a> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> <br/> <b>Genre:</b> <a href="https://itunes.apple.com/us/genre/music-dance/id17?uo=2">Dance</a> <br/> <b>Price:</b> $0.69 <br/> <b>Release Date:</b> October 21, 2016 </font> </td> </tr> </table> </td> </tr> <tr> <td> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> &amp;#169; ℗ 2016 Atlantic Records UK, a Warner Music Group company</font> </td> </tr> </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2017-03-12T16:23:01-07:00</updated>
+        <id im:id="1199947216">
+            https://itunes.apple.com/us/album/body-like-a-back-road/id1199947164?i=1199947216&amp;uo=2
+        </id>
+        <title>Body Like a Back Road - Sam Hunt</title>
+        <im:name>Body Like a Back Road</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/body-like-a-back-road/id1199947164?i=1199947216&amp;uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Track" label="Track"/>
+        </im:contentType>
+        <category im:id="6" term="Country" scheme="https://itunes.apple.com/us/genre/music-country/id6?uo=2" label="Country"/>
+        <link title="Preview" rel="enclosure" type="audio/x-m4a" href="http://audio.itunes.apple.com/apple-assets-us-std-000001/AudioPreview91/v4/a0/70/76/a07076ad-6e8f-f696-cdb2-d034040d47b8/mzaf_5023507303268140738.plus.aac.p.m4a" im:assetType="preview">
+        <im:duration>30000</im:duration>
+        </link>
+        <im:artist href="https://itunes.apple.com/us/artist/sam-hunt/id214150835?uo=2">Sam Hunt</im:artist>
+        <im:price amount="1.29000" currency="USD">$1.29</im:price>
+        <im:image height="55">
+        http://is4.mzstatic.com/image/thumb/Music111/v4/2a/81/52/2a8152b5-9bb3-21d2-69da-e238070bf9d4/UMG_cvrart_00602557382730_01_RGB72_1800x1800_16UMGIM87382.jpg/55x55bb-85.jpg
+        </im:image>
+        <im:image height="60">
+        http://is5.mzstatic.com/image/thumb/Music111/v4/2a/81/52/2a8152b5-9bb3-21d2-69da-e238070bf9d4/UMG_cvrart_00602557382730_01_RGB72_1800x1800_16UMGIM87382.jpg/60x60bb-85.jpg
+        </im:image>
+        <im:image height="170">
+        http://is1.mzstatic.com/image/thumb/Music111/v4/2a/81/52/2a8152b5-9bb3-21d2-69da-e238070bf9d4/UMG_cvrart_00602557382730_01_RGB72_1800x1800_16UMGIM87382.jpg/170x170bb-85.jpg
+        </im:image>
+        <rights>
+        ℗ 2017 MCA Nashville, a Division of UMG Recordings, Inc.
+        </rights>
+        <im:releaseDate label="February 1, 2017">2017-02-01T00:00:00-07:00</im:releaseDate>
+        <im:collection>
+        <im:name>Body Like a Back Road - Single</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/body-like-a-back-road-single/id1199947164?uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Album" label="Album"/>
+        </im:contentType>
+        </im:collection>
+        <content type="html">
+            <table border="0" width="100%"> <tr> <td> <table border="0" width="100%" cellspacing="0" cellpadding="0"> <tr valign="top" align="left"> <td align="center" width="166" valign="top"> <a href="https://itunes.apple.com/us/album/body-like-a-back-road/id1199947164?i=1199947216&amp;uo=2"><img border="0" alt="Sam Hunt - Body Like a Back Road artwork" src="http://is1.mzstatic.com/image/thumb/Music111/v4/2a/81/52/2a8152b5-9bb3-21d2-69da-e238070bf9d4/UMG_cvrart_00602557382730_01_RGB72_1800x1800_16UMGIM87382.jpg/170x170bb-85.jpg" /></a> </td> <td width="10"><img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /></td> <td width="95%"> <b><a href="https://itunes.apple.com/us/album/body-like-a-back-road/id1199947164?i=1199947216&amp;uo=2">Body Like a Back Road</a></b><br/> <a href="https://itunes.apple.com/us/album/body-like-a-back-road-single/id1199947164?uo=2">Body Like a Back Road - Single</a><br/> <a href="https://itunes.apple.com/us/artist/sam-hunt/id214150835?uo=2">Sam Hunt</a> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> <br/> <b>Genre:</b> <a href="https://itunes.apple.com/us/genre/music-country/id6?uo=2">Country</a> <br/> <b>Price:</b> $1.29 <br/> <b>Release Date:</b> February 1, 2017 </font> </td> </tr> </table> </td> </tr> <tr> <td> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> &amp;#169; ℗ 2017 MCA Nashville, a Division of UMG Recordings, Inc.</font> </td> </tr> </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2017-03-12T16:23:01-07:00</updated>
+        <id im:id="1156172705">
+            https://itunes.apple.com/us/album/i-feel-it-coming-feat-daft-punk/id1156172520?i=1156172705&amp;uo=2
+        </id>
+        <title>I Feel It Coming (feat. Daft Punk) - The Weeknd</title>
+        <im:name>I Feel It Coming (feat. Daft Punk)</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/i-feel-it-coming-feat-daft-punk/id1156172520?i=1156172705&amp;uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Track" label="Track"/>
+        </im:contentType>
+        <category im:id="15" term="R&amp;B/Soul" scheme="https://itunes.apple.com/us/genre/music-r-b-soul/id15?uo=2" label="R&amp;B/Soul"/>
+        <link title="Preview" rel="enclosure" type="audio/x-m4a" href="http://audio.itunes.apple.com/apple-assets-us-std-000001/AudioPreview71/v4/d1/bd/a5/d1bda508-67fa-bc37-b08f-1cc4d0ea7efa/mzaf_6050889248922941151.plus.aac.p.m4a" im:assetType="preview">
+        <im:duration>30000</im:duration>
+        </link>
+        <im:artist href="https://itunes.apple.com/us/artist/the-weeknd/id479756766?uo=2">The Weeknd</im:artist>
+        <im:price amount="0.69000" currency="USD">$0.69</im:price>
+        <im:image height="55">
+        http://is5.mzstatic.com/image/thumb/Music62/v4/d1/8c/44/d18c44ef-a19b-1c33-47c2-0ae58c5acad3/UMG_cvrart_00602557212396_01_RGB72_1800x1800_16UMGIM67863.jpg/55x55bb-85.jpg
+        </im:image>
+        <im:image height="60">
+        http://is1.mzstatic.com/image/thumb/Music62/v4/d1/8c/44/d18c44ef-a19b-1c33-47c2-0ae58c5acad3/UMG_cvrart_00602557212396_01_RGB72_1800x1800_16UMGIM67863.jpg/60x60bb-85.jpg
+        </im:image>
+        <im:image height="170">
+        http://is2.mzstatic.com/image/thumb/Music62/v4/d1/8c/44/d18c44ef-a19b-1c33-47c2-0ae58c5acad3/UMG_cvrart_00602557212396_01_RGB72_1800x1800_16UMGIM67863.jpg/170x170bb-85.jpg
+        </im:image>
+        <rights>
+        ℗ 2016 The Weeknd XO, Inc. Manufactured and Marketed by Republic Records, a Division of UMG Recordings, Inc.
+        </rights>
+        <im:releaseDate label="November 25, 2016">2016-11-25T00:00:00-07:00</im:releaseDate>
+        <im:collection>
+        <im:name>Starboy</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/starboy/id1156172520?uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Album" label="Album"/>
+        </im:contentType>
+        </im:collection>
+        <content type="html">
+            <table border="0" width="100%"> <tr> <td> <table border="0" width="100%" cellspacing="0" cellpadding="0"> <tr valign="top" align="left"> <td align="center" width="166" valign="top"> <a href="https://itunes.apple.com/us/album/i-feel-it-coming-feat-daft-punk/id1156172520?i=1156172705&amp;uo=2"><img border="0" alt="The Weeknd - I Feel It Coming (feat. Daft Punk) artwork" src="http://is2.mzstatic.com/image/thumb/Music62/v4/d1/8c/44/d18c44ef-a19b-1c33-47c2-0ae58c5acad3/UMG_cvrart_00602557212396_01_RGB72_1800x1800_16UMGIM67863.jpg/170x170bb-85.jpg" /></a> </td> <td width="10"><img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /></td> <td width="95%"> <b><a href="https://itunes.apple.com/us/album/i-feel-it-coming-feat-daft-punk/id1156172520?i=1156172705&amp;uo=2">I Feel It Coming (feat. Daft Punk)</a></b><br/> <a href="https://itunes.apple.com/us/album/starboy/id1156172520?uo=2">Starboy</a><br/> <a href="https://itunes.apple.com/us/artist/the-weeknd/id479756766?uo=2">The Weeknd</a> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> <br/> <b>Genre:</b> <a href="https://itunes.apple.com/us/genre/music-r-b-soul/id15?uo=2">R&amp;B/Soul</a> <br/> <b>Price:</b> $0.69 <br/> <b>Release Date:</b> November 25, 2016 </font> </td> </tr> </table> </td> </tr> <tr> <td> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> &amp;#169; ℗ 2016 The Weeknd XO, Inc. Manufactured and Marketed by Republic Records, a Division of UMG Recordings, Inc.</font> </td> </tr> </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2017-03-12T16:23:01-07:00</updated>
+        <id im:id="1200626101">
+            https://itunes.apple.com/us/album/believer/id1200626096?i=1200626101&amp;uo=2
+        </id>
+        <title>Believer - Imagine Dragons</title>
+        <im:name>Believer</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/believer/id1200626096?i=1200626101&amp;uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Track" label="Track"/>
+        </im:contentType>
+        <category im:id="20" term="Alternative" scheme="https://itunes.apple.com/us/genre/music-alternative/id20?uo=2" label="Alternative"/>
+        <link title="Preview" rel="enclosure" type="audio/x-m4a" href="http://audio.itunes.apple.com/apple-assets-us-std-000001/AudioPreview111/v4/0b/55/c8/0b55c848-4fcd-0b54-f644-1536c6aa5f3c/mzaf_4964754095938988004.plus.aac.p.m4a" im:assetType="preview">
+        <im:duration>30000</im:duration>
+        </link>
+        <im:artist href="https://itunes.apple.com/us/artist/imagine-dragons/id358714030?uo=2">Imagine Dragons</im:artist>
+        <im:price amount="0.69000" currency="USD">$0.69</im:price>
+        <im:image height="55">
+        http://is2.mzstatic.com/image/thumb/Music122/v4/c0/b8/d1/c0b8d16d-3fd8-0ffc-9b39-cb55e5b86e11/UMG_cvrart_00602557443332_01_RGB72_1800x1800_17UMGIM06814.jpg/55x55bb-85.jpg
+        </im:image>
+        <im:image height="60">
+        http://is3.mzstatic.com/image/thumb/Music122/v4/c0/b8/d1/c0b8d16d-3fd8-0ffc-9b39-cb55e5b86e11/UMG_cvrart_00602557443332_01_RGB72_1800x1800_17UMGIM06814.jpg/60x60bb-85.jpg
+        </im:image>
+        <im:image height="170">
+        http://is3.mzstatic.com/image/thumb/Music122/v4/c0/b8/d1/c0b8d16d-3fd8-0ffc-9b39-cb55e5b86e11/UMG_cvrart_00602557443332_01_RGB72_1800x1800_17UMGIM06814.jpg/170x170bb-85.jpg
+        </im:image>
+        <rights>℗ 2017 KIDinaKORNER/Interscope Records</rights>
+        <im:releaseDate label="February 1, 2017">2017-02-01T00:00:00-07:00</im:releaseDate>
+        <im:collection>
+        <im:name>Believer - Single</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/believer-single/id1200626096?uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Album" label="Album"/>
+        </im:contentType>
+        </im:collection>
+        <content type="html">
+            <table border="0" width="100%"> <tr> <td> <table border="0" width="100%" cellspacing="0" cellpadding="0"> <tr valign="top" align="left"> <td align="center" width="166" valign="top"> <a href="https://itunes.apple.com/us/album/believer/id1200626096?i=1200626101&amp;uo=2"><img border="0" alt="Imagine Dragons - Believer artwork" src="http://is3.mzstatic.com/image/thumb/Music122/v4/c0/b8/d1/c0b8d16d-3fd8-0ffc-9b39-cb55e5b86e11/UMG_cvrart_00602557443332_01_RGB72_1800x1800_17UMGIM06814.jpg/170x170bb-85.jpg" /></a> </td> <td width="10"><img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /></td> <td width="95%"> <b><a href="https://itunes.apple.com/us/album/believer/id1200626096?i=1200626101&amp;uo=2">Believer</a></b><br/> <a href="https://itunes.apple.com/us/album/believer-single/id1200626096?uo=2">Believer - Single</a><br/> <a href="https://itunes.apple.com/us/artist/imagine-dragons/id358714030?uo=2">Imagine Dragons</a> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> <br/> <b>Genre:</b> <a href="https://itunes.apple.com/us/genre/music-alternative/id20?uo=2">Alternative</a> <br/> <b>Price:</b> $0.69 <br/> <b>Release Date:</b> February 1, 2017 </font> </td> </tr> </table> </td> </tr> <tr> <td> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> &amp;#169; ℗ 2017 KIDinaKORNER/Interscope Records</font> </td> </tr> </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2017-03-12T16:23:01-07:00</updated>
+        <id im:id="1207120538">
+            https://itunes.apple.com/us/album/paris/id1207120422?i=1207120538&amp;uo=2
+        </id>
+        <title>Paris - The Chainsmokers</title>
+        <im:name>Paris</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/paris/id1207120422?i=1207120538&amp;uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Track" label="Track"/>
+        </im:contentType>
+        <category im:id="17" term="Dance" scheme="https://itunes.apple.com/us/genre/music-dance/id17?uo=2" label="Dance"/>
+        <link title="Preview" rel="enclosure" type="audio/x-m4a" href="http://audio.itunes.apple.com/apple-assets-us-std-000001/AudioPreview111/v4/fa/a1/a5/faa1a536-ed83-b2dd-abe4-14367008ba46/mzaf_4322362619264635990.plus.aac.p.m4a" im:assetType="preview">
+        <im:duration>30000</im:duration>
+        </link>
+        <im:artist href="https://itunes.apple.com/us/artist/the-chainsmokers/id580391756?uo=2">The Chainsmokers</im:artist>
+        <im:price amount="1.29000" currency="USD">$1.29</im:price>
+        <im:image height="55">
+        http://is2.mzstatic.com/image/thumb/Music122/v4/43/0b/d5/430bd507-bb4a-c26a-fdbc-98f713d728c1/886446379289.jpg/55x55bb-85.jpg
+        </im:image>
+        <im:image height="60">
+        http://is3.mzstatic.com/image/thumb/Music122/v4/43/0b/d5/430bd507-bb4a-c26a-fdbc-98f713d728c1/886446379289.jpg/60x60bb-85.jpg
+        </im:image>
+        <im:image height="170">
+        http://is2.mzstatic.com/image/thumb/Music122/v4/43/0b/d5/430bd507-bb4a-c26a-fdbc-98f713d728c1/886446379289.jpg/170x170bb-85.jpg
+        </im:image>
+        <rights>℗ 2017 Disruptor Records/Columbia Records</rights>
+        <im:releaseDate label="April 7, 2017">2017-04-07T00:00:00-07:00</im:releaseDate>
+        <im:collection>
+        <im:name>Memories...Do Not Open</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/memories-do-not-open/id1207120422?uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Album" label="Album"/>
+        </im:contentType>
+        </im:collection>
+        <content type="html">
+            <table border="0" width="100%"> <tr> <td> <table border="0" width="100%" cellspacing="0" cellpadding="0"> <tr valign="top" align="left"> <td align="center" width="166" valign="top"> <a href="https://itunes.apple.com/us/album/paris/id1207120422?i=1207120538&amp;uo=2"><img border="0" alt="The Chainsmokers - Paris artwork" src="http://is2.mzstatic.com/image/thumb/Music122/v4/43/0b/d5/430bd507-bb4a-c26a-fdbc-98f713d728c1/886446379289.jpg/170x170bb-85.jpg" /></a> </td> <td width="10"><img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /></td> <td width="95%"> <b><a href="https://itunes.apple.com/us/album/paris/id1207120422?i=1207120538&amp;uo=2">Paris</a></b><br/> <a href="https://itunes.apple.com/us/album/memories-do-not-open/id1207120422?uo=2">Memories...Do Not Open</a><br/> <a href="https://itunes.apple.com/us/artist/the-chainsmokers/id580391756?uo=2">The Chainsmokers</a> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> <br/> <b>Genre:</b> <a href="https://itunes.apple.com/us/genre/music-dance/id17?uo=2">Dance</a> <br/> <b>Price:</b> $1.29 <br/> <b>Expected Release Date:</b> April 7, 2017 </font> </td> </tr> </table> </td> </tr> <tr> <td> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> &amp;#169; ℗ 2017 Disruptor Records/Columbia Records</font> </td> </tr> </table>
+        </content>
+    </entry>
+    <entry>
+        <updated>2017-03-12T16:23:01-07:00</updated>
+        <id im:id="1203815515">
+            https://itunes.apple.com/us/album/chained-to-the-rhythm-feat-skip-marley/id1203815492?i=1203815515&amp;uo=2
+        </id>
+        <title>
+        Chained to the Rhythm (feat. Skip Marley) - Katy Perry
+        </title>
+        <im:name>Chained to the Rhythm (feat. Skip Marley)</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/chained-to-the-rhythm-feat-skip-marley/id1203815492?i=1203815515&amp;uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Track" label="Track"/>
+        </im:contentType>
+        <category im:id="14" term="Pop" scheme="https://itunes.apple.com/us/genre/music-pop/id14?uo=2" label="Pop"/>
+        <link title="Preview" rel="enclosure" type="audio/x-m4a" href="http://audio.itunes.apple.com/apple-assets-us-std-000001/AudioPreview122/v4/86/7e/76/867e7678-f10a-f0aa-3e0d-71bb45e24a4a/mzaf_3587607452289191158.plus.aac.p.m4a" im:assetType="preview">
+        <im:duration>30000</im:duration>
+        </link>
+        <im:artist href="https://itunes.apple.com/us/artist/katy-perry/id64387566?uo=2">Katy Perry</im:artist>
+        <im:price amount="1.29000" currency="USD">$1.29</im:price>
+        <im:image height="55">
+        http://is5.mzstatic.com/image/thumb/Music122/v4/8b/fe/1d/8bfe1d3d-4544-adf6-6ff5-5395f6d8282e/UMG_cvrart_00602557454475_01_RGB72_1800x1800_17UMGIM07247.jpg/55x55bb-85.jpg
+        </im:image>
+        <im:image height="60">
+        http://is1.mzstatic.com/image/thumb/Music122/v4/8b/fe/1d/8bfe1d3d-4544-adf6-6ff5-5395f6d8282e/UMG_cvrart_00602557454475_01_RGB72_1800x1800_17UMGIM07247.jpg/60x60bb-85.jpg
+        </im:image>
+        <im:image height="170">
+        http://is1.mzstatic.com/image/thumb/Music122/v4/8b/fe/1d/8bfe1d3d-4544-adf6-6ff5-5395f6d8282e/UMG_cvrart_00602557454475_01_RGB72_1800x1800_17UMGIM07247.jpg/170x170bb-85.jpg
+        </im:image>
+        <rights>℗ 2017 Capitol Records</rights>
+        <im:releaseDate label="February 10, 2017">2017-02-10T00:00:00-07:00</im:releaseDate>
+        <im:collection>
+        <im:name>Chained to the Rhythm (feat. Skip Marley) - Single</im:name>
+        <link rel="alternate" type="text/html" href="https://itunes.apple.com/us/album/chained-to-the-rhythm-feat-skip-marley-single/id1203815492?uo=2"/>
+        <im:contentType term="Music" label="Music">
+        <im:contentType term="Album" label="Album"/>
+        </im:contentType>
+        </im:collection>
+        <content type="html">
+            <table border="0" width="100%"> <tr> <td> <table border="0" width="100%" cellspacing="0" cellpadding="0"> <tr valign="top" align="left"> <td align="center" width="166" valign="top"> <a href="https://itunes.apple.com/us/album/chained-to-the-rhythm-feat-skip-marley/id1203815492?i=1203815515&amp;uo=2"><img border="0" alt="Katy Perry - Chained to the Rhythm (feat. Skip Marley) artwork" src="http://is1.mzstatic.com/image/thumb/Music122/v4/8b/fe/1d/8bfe1d3d-4544-adf6-6ff5-5395f6d8282e/UMG_cvrart_00602557454475_01_RGB72_1800x1800_17UMGIM07247.jpg/170x170bb-85.jpg" /></a> </td> <td width="10"><img alt="" width="10" height="1" src="https://s.mzstatic.com/images/spacer.gif" /></td> <td width="95%"> <b><a href="https://itunes.apple.com/us/album/chained-to-the-rhythm-feat-skip-marley/id1203815492?i=1203815515&amp;uo=2">Chained to the Rhythm (feat. Skip Marley)</a></b><br/> <a href="https://itunes.apple.com/us/album/chained-to-the-rhythm-feat-skip-marley-single/id1203815492?uo=2">Chained to the Rhythm (feat. Skip Marley) - Single</a><br/> <a href="https://itunes.apple.com/us/artist/katy-perry/id64387566?uo=2">Katy Perry</a> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> <br/> <b>Genre:</b> <a href="https://itunes.apple.com/us/genre/music-pop/id14?uo=2">Pop</a> <br/> <b>Price:</b> $1.29 <br/> <b>Release Date:</b> February 10, 2017 </font> </td> </tr> </table> </td> </tr> <tr> <td> <font size="2" face="Helvetica,Arial,Geneva,Swiss,SunSans-Regular"> &amp;#169; ℗ 2017 Capitol Records</font> </td> </tr> </table>
+        </content>
+    </entry>
+</feed>
