@@ -11,10 +11,17 @@
 NSInteger kContinuousScrollViewLabelTopMargin = 32;
 NSInteger kContinuousScrollViewLabelSideMargin = 16;
 
+typedef NS_ENUM(NSUInteger, ScrollDirection) {
+    ScrollDirectionNone,
+    ScrollDirectionUp,
+    ScrollDirectionDown
+};
+
 @interface ContinuousScrollView () <UIScrollViewDelegate>
-@property (nonatomic, strong) NSMutableArray *labelContainersLaidout;
+@property (nonatomic, strong) NSArray *labelContainersLaidout;
 @property (nonatomic, strong) UIView *currentContainerView;
 @property (nonatomic, strong) NSArray *verticalLabelConstraints;
+@property (nonatomic, assign) CGFloat lastContentOffset;
 @end
 
 @implementation ContinuousScrollView
@@ -78,19 +85,28 @@ NSInteger kContinuousScrollViewLabelSideMargin = 16;
     [self addSubview:_currentContainerView];
     
     NSDictionary *views = @{@"_currentContainerView":_currentContainerView};
+    // Make the container view constrain to the top and bottom of the scroll view
     [self addConstraints:[NSLayoutConstraint
                           constraintsWithVisualFormat:@"V:|[_currentContainerView]|"
                           options:0 metrics:0 views:views]];
+    // Make the container view snap to the left side
     [self addConstraints:[NSLayoutConstraint
                           constraintsWithVisualFormat:@"H:|[_currentContainerView]"
                           options:0 metrics:0 views:views]];
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_currentContainerView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0]];
+    // Make the containerview the same width at the scroll view
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_currentContainerView
+                                                     attribute:NSLayoutAttributeWidth
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:self
+                                                     attribute:NSLayoutAttributeWidth
+                                                    multiplier:1.0 constant:0]];
 }
 
 - (void)tileLabels
 {
     // Grab three sets and build their constraints
     UIView *labelSet1 = [self buildLabelSet];
+    labelSet1.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:.5];
     [self.currentContainerView addSubview:labelSet1];
      [NSLayoutConstraint activateConstraints:
       [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[labelSet1]|"
@@ -98,6 +114,7 @@ NSInteger kContinuousScrollViewLabelSideMargin = 16;
                                                 views:NSDictionaryOfVariableBindings(labelSet1)]];
     
     UIView *labelSet2 = [self buildLabelSet];
+    labelSet2.backgroundColor = [[UIColor orangeColor] colorWithAlphaComponent:.5];
     [self.currentContainerView addSubview:labelSet2];
     [NSLayoutConstraint activateConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[labelSet2]|"
@@ -105,18 +122,18 @@ NSInteger kContinuousScrollViewLabelSideMargin = 16;
                                                views:NSDictionaryOfVariableBindings(labelSet2)]];
     
     UIView *labelSet3 = [self buildLabelSet];
+    labelSet3.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:.5];
     [self.currentContainerView addSubview:labelSet3];
     [NSLayoutConstraint activateConstraints:[NSLayoutConstraint
                                              constraintsWithVisualFormat:@"H:|[labelSet3]|"
                                              options:0 metrics:0
                                              views:NSDictionaryOfVariableBindings(labelSet3)]];
     
+    self.labelContainersLaidout = @[labelSet1, labelSet2, labelSet3];
+    
     // Add and save the vertical constraints
-    self.verticalLabelConstraints = [NSLayoutConstraint
-                                     constraintsWithVisualFormat:@"V:|[labelSet1][labelSet2][labelSet3]-padding-|"
-                                     options:0 metrics:@{@"padding": @(kContinuousScrollViewLabelTopMargin)}
-                                     views:NSDictionaryOfVariableBindings(labelSet1, labelSet2, labelSet3)];
-    [NSLayoutConstraint activateConstraints:self.verticalLabelConstraints];
+    [self buildLabelContainerConstraints];
+    
 }
 
 - (UIView *)buildLabelSet
@@ -181,14 +198,10 @@ NSInteger kContinuousScrollViewLabelSideMargin = 16;
         {
             labelConstraintString = [NSString stringWithFormat:@"V:|%@|", labelConstraintString];
             
-            // Build the vertical constraints
-            self.verticalLabelConstraints =
-            [NSLayoutConstraint constraintsWithVisualFormat:labelConstraintString
-                                                    options:0 metrics:0
-                                                      views:labelConstraintDictionary];
-            
             // Add the vertical constraints
-            [NSLayoutConstraint activateConstraints:self.verticalLabelConstraints];
+            [NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:labelConstraintString
+                                                                                            options:0 metrics:0
+                                                                                              views:labelConstraintDictionary]];
             
         }
     }
@@ -213,10 +226,35 @@ NSInteger kContinuousScrollViewLabelSideMargin = 16;
     [NSLayoutConstraint activateConstraints:horizontalConstraints];
 }
 
-- (void)calibratePosition
+// Used to reorder the constraints by going through an ordered array of the
+// containers
+- (void)buildLabelContainerConstraints
+{
+    if (self.verticalLabelConstraints)
+    {
+        [NSLayoutConstraint deactivateConstraints:self.verticalLabelConstraints];
+    }
+    
+    NSMutableDictionary *constraintsDictionary = [[NSMutableDictionary alloc] init];
+    NSInteger index = 1;
+    for (UIView *labelSet in self.labelContainersLaidout)
+    {
+        NSString *indexName = [NSString stringWithFormat:@"labelSet%zd", index];
+        [constraintsDictionary setObject:labelSet forKey:indexName];
+        index++;
+    }
+    self.verticalLabelConstraints = [NSLayoutConstraint
+                                     constraintsWithVisualFormat:@"V:|[labelSet1][labelSet2][labelSet3]-padding-|"
+                                     options:0 metrics:@{@"padding": @(kContinuousScrollViewLabelTopMargin)}
+                                     views:constraintsDictionary];
+    [NSLayoutConstraint activateConstraints:self.verticalLabelConstraints];
+}
+
+- (void)calibratePositionForDirection:(ScrollDirection)direction
 {
     // Grab some attributes about our scrolled area and content area to
     // calculate the need to reposition our content view
+    CGPoint currentOffset = [self contentOffset];
     CGFloat contentHeight = [self contentSize].height;
     CGFloat centerOffsetY = (contentHeight - self.bounds.size.height) / 2.0;
     CGFloat distanceFromTheMiddle = fabs(self.contentOffset.y - centerOffsetY);
@@ -224,14 +262,59 @@ NSInteger kContinuousScrollViewLabelSideMargin = 16;
     if (distanceFromTheMiddle > (contentHeight / 4.0))
     {
         self.contentOffset = CGPointMake(self.contentOffset.x, centerOffsetY);
+        
+        // Reorder the views in the array to adjust the positioning
+        [self adjustTileLayoutForDirection:direction];
+        [self buildLabelContainerConstraints];
+        
+        for (UIView *container in self.labelContainersLaidout)
+        {
+            CGPoint center = [self.currentContainerView convertPoint:container.center toView:self];
+            center.y += (centerOffsetY - currentOffset.y);
+            container.center = [self convertPoint:center toView:self.currentContainerView];
+        }
     }
+}
+
+- (void)adjustTileLayoutForDirection:(ScrollDirection)direction
+{
+    // Get out of here if we don't have a proper set up
+    if ([_labelContainersLaidout count] < 3)
+    {
+        return;
+    }
+    
+    NSMutableArray *labelsLaidout = [self.labelContainersLaidout mutableCopy];
+    if (direction == ScrollDirectionDown)
+    { // Move first element to the end
+        UIView *firstElement = [labelsLaidout firstObject];
+        [labelsLaidout removeObjectAtIndex:0];
+        [labelsLaidout addObject:firstElement];
+    }
+    else if (direction == ScrollDirectionUp)
+    { // Move the last element to the beginning
+        UIView *lastElement = [labelsLaidout lastObject];
+        [labelsLaidout removeObjectAtIndex:2];
+        [labelsLaidout insertObject:lastElement atIndex:0];
+    }
+    self.labelContainersLaidout = [NSArray arrayWithArray:labelsLaidout];
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - UIScrollViewDelegate Methods
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    [self calibratePosition];
+    // Figure out the direction we're going so we know how to tile
+    ScrollDirection scrollDirection;
+    if (self.lastContentOffset > scrollView.contentOffset.y)
+        scrollDirection = ScrollDirectionDown;
+    else if (self.lastContentOffset < scrollView.contentOffset.y)
+        scrollDirection = ScrollDirectionUp;
+    self.lastContentOffset = scrollView.contentOffset.y;
+
+    // Readjust the positioning of our content view if we have gone far enough
+    // in a certain direction
+    [self calibratePositionForDirection:scrollDirection];
 }
 
 @end
