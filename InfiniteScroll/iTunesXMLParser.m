@@ -72,7 +72,7 @@
     if ([elementName isEqualToString:@"entry"])
     {
         ScrollDataModel *dataModel = [[ScrollDataModel alloc]
-                                      initWithText:self.currentTitle
+                                      initWithText:[NSString stringWithFormat:@"%@\n%@", self.currentTitle, @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lectus nisi, consequat id urna vitae, feugiat placerat leo. Integer id pharetra nunc, at fringilla eros. Phasellus euismod quam maximus est."]
                                       imageURL:self.currentImage];
         
         [self.dataArray addObject:dataModel];
@@ -94,7 +94,15 @@
     {
         if([_currentTag isEqualToString:@"title"])
         {
-            self.currentTitle = stringValue;
+            // Concatenate in order to preserve &'s
+            if (self.currentTitle)
+            {
+                self.currentTitle = [NSString stringWithFormat:@"%@ %@", self.currentTitle, stringValue];
+            }
+            else
+            {
+                self.currentTitle = stringValue;
+            }
         }
         else if ([_currentTag isEqualToString:@"im:image"])
         {

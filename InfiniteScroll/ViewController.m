@@ -74,6 +74,7 @@
         returnLabel.tag = index;
         returnLabel.numberOfLines = 3;
         returnLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        returnLabel.backgroundColor = [UIColor yellowColor];
     }
     
 

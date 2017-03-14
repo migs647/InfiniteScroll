@@ -11,7 +11,7 @@
 NSInteger kContinuousScrollViewLabelTopMargin = 32;
 NSInteger kContinuousScrollViewLabelSideMargin = 16;
 
-@interface ContinuousScrollView ()
+@interface ContinuousScrollView () <UIScrollViewDelegate>
 @property (nonatomic, strong) NSMutableArray *labelsLaidout;
 @property (nonatomic, strong) UIView *currentContainerView;
 @end
@@ -36,6 +36,8 @@ NSInteger kContinuousScrollViewLabelSideMargin = 16;
 
 - (void)buildContainerView
 {
+    self.delegate = self;
+    
     // Get rid of the old container view if there was one
     if (_currentContainerView)
     {
@@ -45,16 +47,18 @@ NSInteger kContinuousScrollViewLabelSideMargin = 16;
     
     // Create the new container view
     self.currentContainerView = [[UIView alloc] init];
+    self.currentContainerView.backgroundColor = [UIColor greenColor];
     _currentContainerView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:_currentContainerView];
     
     NSDictionary *views = @{@"_currentContainerView":_currentContainerView};
     [self addConstraints:[NSLayoutConstraint
-                          constraintsWithVisualFormat:@"V:|[_currentContainerView]"
+                          constraintsWithVisualFormat:@"V:|[_currentContainerView]|"
                           options:0 metrics:0 views:views]];
     [self addConstraints:[NSLayoutConstraint
-                          constraintsWithVisualFormat:@"H:|[_currentContainerView]|"
+                          constraintsWithVisualFormat:@"H:|[_currentContainerView]"
                           options:0 metrics:0 views:views]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_currentContainerView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0]];
 }
 
 - (void)addLabels
@@ -72,6 +76,8 @@ NSInteger kContinuousScrollViewLabelSideMargin = 16;
     {
         // Fill in the data we need
         NSMutableArray *labelsLaidOut = [[NSMutableArray alloc] init];
+        
+        // Do this three times so we have cells on top and cells on bottom
         for (NSInteger index = 0; index < [_dataSource numberOfLabels]; ++index)
         {
             // Grab a label for the current index
@@ -139,6 +145,28 @@ NSInteger kContinuousScrollViewLabelSideMargin = 16;
     
     // Add the new found constraints
     [self.currentContainerView addConstraints:horizontalConstraints];
+}
+
+- (void)calibratePosition
+{
+    // Grab some attributes about our scrolled area and content area to
+    // calculate the need to reposition our content view
+    CGFloat contentHeight = [self contentSize].height;
+    CGFloat centerOffsetY = (contentHeight - self.bounds.size.height) / 2.0;
+    CGFloat distanceFromTheMiddle = fabs(self.contentOffset.y - centerOffsetY);
+    
+    if (distanceFromTheMiddle > (contentHeight / 4.0))
+    {
+        NSLog(@"Move to the correct offset");
+        self.contentOffset = CGPointMake(self.contentOffset.x, centerOffsetY);
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - UIScrollViewDelegate Methods
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+//    [self calibratePosition];
 }
 
 @end
