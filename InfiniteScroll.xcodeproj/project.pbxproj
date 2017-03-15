@@ -18,6 +18,8 @@
 		964437251E760F75002CAF0D /* ScrollDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 964437241E760F75002CAF0D /* ScrollDataModel.m */; };
 		9644372C1E76126E002CAF0D /* topsongs.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9644372B1E76126E002CAF0D /* topsongs.xml */; };
 		9644372F1E762540002CAF0D /* iTunesXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9644372E1E762540002CAF0D /* iTunesXMLParser.m */; };
+		9644386D1E78A24C002CAF0D /* CGGFramesScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9644386C1E78A24C002CAF0D /* CGGFramesScrollView.m */; };
+		964438701E79E997002CAF0D /* UILabel+.m in Sources */ = {isa = PBXBuildFile; fileRef = 9644386F1E79E997002CAF0D /* UILabel+.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		9644372B1E76126E002CAF0D /* topsongs.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = topsongs.xml; path = Mocks/topsongs.xml; sourceTree = "<group>"; };
 		9644372D1E762540002CAF0D /* iTunesXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunesXMLParser.h; sourceTree = "<group>"; };
 		9644372E1E762540002CAF0D /* iTunesXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTunesXMLParser.m; sourceTree = "<group>"; };
+		9644386B1E78A24C002CAF0D /* CGGFramesScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGFramesScrollView.h; sourceTree = "<group>"; };
+		9644386C1E78A24C002CAF0D /* CGGFramesScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGFramesScrollView.m; sourceTree = "<group>"; };
+		9644386E1E79E997002CAF0D /* UILabel+.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+.h"; sourceTree = "<group>"; };
+		9644386F1E79E997002CAF0D /* UILabel+.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,10 @@
 			children = (
 				964437201E760337002CAF0D /* ContinuousScrollView.h */,
 				964437211E760337002CAF0D /* ContinuousScrollView.m */,
+				9644386B1E78A24C002CAF0D /* CGGFramesScrollView.h */,
+				9644386C1E78A24C002CAF0D /* CGGFramesScrollView.m */,
+				9644386E1E79E997002CAF0D /* UILabel+.h */,
+				9644386F1E79E997002CAF0D /* UILabel+.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -275,6 +285,8 @@
 				9644372F1E762540002CAF0D /* iTunesXMLParser.m in Sources */,
 				964437031E75EC47002CAF0D /* ViewController.m in Sources */,
 				964437251E760F75002CAF0D /* ScrollDataModel.m in Sources */,
+				964438701E79E997002CAF0D /* UILabel+.m in Sources */,
+				9644386D1E78A24C002CAF0D /* CGGFramesScrollView.m in Sources */,
 				964437001E75EC47002CAF0D /* AppDelegate.m in Sources */,
 				964437221E760337002CAF0D /* ContinuousScrollView.m in Sources */,
 				964436FD1E75EC47002CAF0D /* main.m in Sources */,
@@ -472,6 +484,7 @@
 				9644371C1E75EC47002CAF0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9644371D1E75EC47002CAF0D /* Build configuration list for PBXNativeTarget "InfiniteScrollTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +493,7 @@
 				9644371F1E75EC47002CAF0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

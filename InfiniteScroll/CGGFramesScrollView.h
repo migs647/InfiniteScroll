@@ -1,20 +1,18 @@
 //
-//  ContinuousScrollView.h
+//  CGGFramesScrollView.h
 //  InfiniteScroll
 //
-//  Created by Cody Garvin on 3/12/17.
+//  Created by Cody Garvin on 3/14/17.
 //  Copyright © 2017 Cody Garvin. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-
 /**
- The dataSource that provides layout information for an instance of 
+ The dataSource that provides layout information for an instance of
  ContinuousScrollView.
  */
-@protocol ContinuousScrollViewDataSource <NSObject>
+@protocol CGGFramesScrollViewDataSource <NSObject>
 
 /// The number of labels to display.
 - (NSInteger)numberOfLabels;
@@ -23,17 +21,15 @@
 - (UILabel *)labelAtIndex:(NSInteger)index;
 @end
 
-
 /**
- A scrollview done in autolayout that will scroll indefinitely one direction 
+ A scrollview done using frames that will scroll indefinitely one direction
  or another.
  */
-IB_DESIGNABLE @interface ContinuousScrollView : UIScrollView
+IB_DESIGNABLE @interface CGGFramesScrollView : UIScrollView
 
 /// An instance that adheres to ContinousScrollViewDataSource to
 /// provide data for layout procedures for the scrollview.
-@property (nonatomic, weak) id<ContinuousScrollViewDataSource> dataSource;
-
+@property (nonatomic, weak) id<CGGFramesScrollViewDataSource> dataSource;
 
 /**
  Reloads the scrollview so all items refresh appropriately.

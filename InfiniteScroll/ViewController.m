@@ -10,10 +10,12 @@
 #import "ContinuousScrollView.h"
 #import "ScrollDataModel.h"
 #import "iTunesXMLParser.h"
+#import "CGGFramesScrollView.h"
 
-@interface ViewController () <ContinuousScrollViewDataSource, iTunesXMLParserDelegate>
+@interface ViewController () <CGGFramesScrollViewDataSource, iTunesXMLParserDelegate>
 @property (nonatomic, strong) NSArray *scrollData;
 @property (nonatomic, weak) IBOutlet ContinuousScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet CGGFramesScrollView *frameScrollView;
 @property (nonatomic, strong) NSArray *dataArray;
 @end
 
@@ -23,11 +25,10 @@
 {
     [super viewDidLoad];
     
-    
     [self loadData];
     
     // Do any additional setup after loading the view, typically from a nib.
-    [self.scrollView setDataSource:self];
+    [self.frameScrollView setDataSource:self];
 }
 
 
@@ -54,6 +55,7 @@
 {
     self.dataArray = data;
     [_scrollView reload];
+    [_frameScrollView reload];
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -74,7 +76,6 @@
         returnLabel.tag = index;
         returnLabel.numberOfLines = 3;
         returnLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        returnLabel.backgroundColor = [UIColor yellowColor];
     }
     
     return returnLabel;

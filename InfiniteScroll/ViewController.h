@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ContinuousScrollView.h"
 
 @interface ViewController : UIViewController
 

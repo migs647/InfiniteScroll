@@ -80,7 +80,6 @@ typedef NS_ENUM(NSUInteger, ScrollDirection) {
     
     // Create the new container view
     self.currentContainerView = [[UIView alloc] init];
-    self.currentContainerView.backgroundColor = [UIColor greenColor];
     _currentContainerView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:_currentContainerView];
     
@@ -106,7 +105,6 @@ typedef NS_ENUM(NSUInteger, ScrollDirection) {
 {
     // Grab three sets and build their constraints
     UIView *labelSet1 = [self buildLabelSet];
-    labelSet1.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:.5];
     [self.currentContainerView addSubview:labelSet1];
      [NSLayoutConstraint activateConstraints:
       [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[labelSet1]|"
@@ -114,7 +112,6 @@ typedef NS_ENUM(NSUInteger, ScrollDirection) {
                                                 views:NSDictionaryOfVariableBindings(labelSet1)]];
     
     UIView *labelSet2 = [self buildLabelSet];
-    labelSet2.backgroundColor = [[UIColor orangeColor] colorWithAlphaComponent:.5];
     [self.currentContainerView addSubview:labelSet2];
     [NSLayoutConstraint activateConstraints:
      [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[labelSet2]|"
@@ -122,7 +119,6 @@ typedef NS_ENUM(NSUInteger, ScrollDirection) {
                                                views:NSDictionaryOfVariableBindings(labelSet2)]];
     
     UIView *labelSet3 = [self buildLabelSet];
-    labelSet3.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:.5];
     [self.currentContainerView addSubview:labelSet3];
     [NSLayoutConstraint activateConstraints:[NSLayoutConstraint
                                              constraintsWithVisualFormat:@"H:|[labelSet3]|"
@@ -147,7 +143,6 @@ typedef NS_ENUM(NSUInteger, ScrollDirection) {
     // Start with the labelContainerView
     UIView *labelContainerView = [[UIView alloc] init];
     labelContainerView.translatesAutoresizingMaskIntoConstraints = NO;
-    labelContainerView.backgroundColor = [UIColor redColor];
 
     // Start fresh
     NSString *labelConstraintString = @"";
@@ -248,6 +243,8 @@ typedef NS_ENUM(NSUInteger, ScrollDirection) {
                                      options:0 metrics:@{@"padding": @(kContinuousScrollViewLabelTopMargin)}
                                      views:constraintsDictionary];
     [NSLayoutConstraint activateConstraints:self.verticalLabelConstraints];
+    
+    [self setNeedsUpdateConstraints];
 }
 
 - (void)calibratePositionForDirection:(ScrollDirection)direction
@@ -285,13 +282,13 @@ typedef NS_ENUM(NSUInteger, ScrollDirection) {
     }
     
     NSMutableArray *labelsLaidout = [self.labelContainersLaidout mutableCopy];
-    if (direction == ScrollDirectionDown)
+    if (direction == ScrollDirectionUp)
     { // Move first element to the end
         UIView *firstElement = [labelsLaidout firstObject];
         [labelsLaidout removeObjectAtIndex:0];
         [labelsLaidout addObject:firstElement];
     }
-    else if (direction == ScrollDirectionUp)
+    else if (direction == ScrollDirectionDown)
     { // Move the last element to the beginning
         UIView *lastElement = [labelsLaidout lastObject];
         [labelsLaidout removeObjectAtIndex:2];
