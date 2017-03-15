@@ -73,11 +73,7 @@
         ScrollDataModel *dataModel = [[ScrollDataModel alloc]
                                       initWithText:[NSString stringWithFormat:@"%@\n%@",
                                                     self.currentTitle,
-                                                    @"Lorem ipsum dolor sit amet, consectetur \
-                                                    adipiscing elit. Nam lectus nisi, consequat \
-                                                    id urna vitae, feugiat placerat leo. Integer \
-                                                    id pharetra nunc, at fringilla eros. Phasellus \
-                                                    euismod quam maximus est."]
+                                                    @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lectus nisi, consequat id urna vitae, feugiat placerat leo. Integer id pharetra nunc, at fringilla eros. Phasellus euismod quam maximus est."]
                                       imageURL:self.currentImage];
         
         [self.dataArray addObject:dataModel];

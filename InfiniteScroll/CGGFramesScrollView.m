@@ -33,9 +33,7 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        // Hide the scroll indicator so we can appear seemless
-        [self buildContainerView];
-        [self setShowsVerticalScrollIndicator:NO];
+        [self configure];
     }
     
     return self;
@@ -46,18 +44,35 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
     self = [super init];
     if (self)
     {
-        // Hide the scroll indicator so we can appear seemless
-        [self buildContainerView];
-        [self setShowsVerticalScrollIndicator:NO];
+        [self configure];
     }
     
     return self;
+}
+
+- (void)dealloc
+{
+    // Make sure we aren't watching any rotation issues any more
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)configure
+{
+    // Hide the scroll indicator so we can appear seemless
+    [self buildContainerView];
+    [self setShowsVerticalScrollIndicator:NO];
+    
+    // We need to know when orientation changes happen for doing new layouts
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Layout and building implementations
 - (void)reload
 {
+    // Ignore any reloads
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
     // Ignore any reloads
     self.delegate = nil;
     
@@ -68,14 +83,21 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
     // Add all of the labels in an array that we need
     [self addLabels];
     
+    // Center the world so we can scroll up and down
     [self calibratePosition];
     
+    // Set the labels in the correct position now that the world is centered
     [self adjustLabelFrames];
     
-    // Now layout all of our subviews
-//    [self setNeedsDisplay];
-    
+    // Lets set up to watch any scrolling delegation
     self.delegate = self;
+    
+    // Lets watch for rotation notifications again.
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(orientationChanged:)
+                                                 name:UIDeviceOrientationDidChangeNotification
+                                               object:nil];
+
 }
 
 - (void)buildContainerView
@@ -254,9 +276,19 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-#pragma mark - UIGestureRecognizer Methods
-- (void)handleLabelTap:(UITapGestureRecognizer *)recognizer
+#pragma mark - Orientation Methods
+- (void)orientationChanged:(NSNotification *)notification
 {
     
+    UIDeviceOrientation currentOrientation = [[UIDevice currentDevice] orientation];
+    NSLog(@"Orientation: %zd", currentOrientation);
+    // We rotated
+    if (currentOrientation == UIDeviceOrientationLandscapeLeft ||
+        currentOrientation == UIDeviceOrientationLandscapeRight ||
+        currentOrientation == UIDeviceOrientationPortrait)
+    {
+        NSLog(@"Rotated");
+        [self reload];
+    }
 }
 @end
