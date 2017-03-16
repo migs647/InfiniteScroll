@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="32I-pk-Ae6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,77 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="M5e-Lc-Ejf">
+            <objects>
+                <navigationController id="32I-pk-Ae6" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yq5-en-5Wo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sog-Jp-fRN" kind="relationship" relationship="rootViewController" id="cIX-O8-Ctf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="264-K2-8Wu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1719" y="109"/>
+        </scene>
+        <!--InfiniteScroll-->
+        <scene sceneID="WP4-aT-kTQ">
+            <objects>
+                <viewController title="InfiniteScroll" id="sog-Jp-fRN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OmE-tw-no3"/>
+                        <viewControllerLayoutGuide type="bottom" id="7AB-nD-e4i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Siy-pw-Ug2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HqB-sa-JwB">
+                                <rect key="frame" x="67" y="234" width="240" height="199"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbb-rq-kZv">
+                                        <rect key="frame" x="15" y="169" width="210" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Infinite ScrollView (Autolayout)"/>
+                                        <connections>
+                                            <segue destination="I1G-Ys-hbi" kind="show" id="e5G-UY-NLf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcs-kv-9tZ">
+                                        <rect key="frame" x="28" y="0.0" width="184" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Infinite ScrollView (frames)"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="4zy-Ns-2wO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="199" id="EPy-Nv-hvm"/>
+                                    <constraint firstAttribute="width" constant="240" id="bhO-MQ-qOo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HqB-sa-JwB" firstAttribute="centerX" secondItem="Siy-pw-Ug2" secondAttribute="centerX" id="LQk-Mo-TXg"/>
+                            <constraint firstItem="HqB-sa-JwB" firstAttribute="centerY" secondItem="Siy-pw-Ug2" secondAttribute="centerY" id="rd2-f4-l1f"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vYG-Ia-uZV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s2C-I0-NkH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-679.20000000000005" y="137.18140929535232"/>
+        </scene>
+        <!--Frames-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Frames" id="BYZ-38-t0r" customClass="ScrollViewFramesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,15 +89,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIN-Tx-Z8A" customClass="CGGFramesScrollView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.63505784160000001" green="0.65549770529999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="lIN-Tx-Z8A" secondAttribute="trailing" id="9HE-Nf-IcZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lIN-Tx-Z8A" secondAttribute="bottom" id="YYl-yd-nth"/>
-                            <constraint firstItem="lIN-Tx-Z8A" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qG3-nU-Bw1"/>
+                            <constraint firstItem="lIN-Tx-Z8A" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="t7P-LI-ZZN"/>
                             <constraint firstItem="lIN-Tx-Z8A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vjQ-9f-v0X"/>
                         </constraints>
                     </view>
@@ -41,6 +107,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135.19999999999999" y="138.0809595202399"/>
+        </scene>
+        <!--Autolayout-->
+        <scene sceneID="yOW-wl-z2C">
+            <objects>
+                <viewController title="Autolayout" id="I1G-Ys-hbi" customClass="ScrollViewALViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GZG-N0-pal"/>
+                        <viewControllerLayoutGuide type="bottom" id="YGy-NE-SJq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0aL-VS-ESD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgt-9q-pm7" customClass="CGGALScrollView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qgt-9q-pm7" firstAttribute="top" secondItem="0aL-VS-ESD" secondAttribute="top" id="U1f-za-zRF"/>
+                            <constraint firstItem="YGy-NE-SJq" firstAttribute="top" secondItem="qgt-9q-pm7" secondAttribute="bottom" id="Zro-4l-w6C"/>
+                            <constraint firstAttribute="trailing" secondItem="qgt-9q-pm7" secondAttribute="trailing" id="egO-L6-6n9"/>
+                            <constraint firstItem="qgt-9q-pm7" firstAttribute="leading" secondItem="0aL-VS-ESD" secondAttribute="leading" id="vOc-RK-dRV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alScrollView" destination="qgt-9q-pm7" id="rYP-sD-5sZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xTQ-n2-km5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885.60000000000002" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>

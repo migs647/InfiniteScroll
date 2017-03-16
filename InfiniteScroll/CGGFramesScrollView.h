@@ -21,6 +21,12 @@
 - (UILabel *)labelAtIndex:(NSInteger)index;
 @end
 
+@protocol CGGFramesScrollViewDelegate <NSObject>
+
+/// A delegation call to alert a watcher that a label was tapped
+- (void)didTapLabel:(UILabel *)label atIndex:(NSInteger)index;
+@end
+
 /**
  A scrollview done using frames that will scroll indefinitely one direction
  or another.
@@ -35,4 +41,13 @@ IB_DESIGNABLE @interface CGGFramesScrollView : UIScrollView
  Reloads the scrollview so all items refresh appropriately.
  */
 - (void)reload;
+
+
+/**
+ Reloads a label at a specified index. This entails asking for a new label, possibly 
+ with new attributes.
+
+ @param index The index of the cell that is to be replaced.
+ */
+- (void)reloadLabelAtIndex:(NSInteger)index;
 @end

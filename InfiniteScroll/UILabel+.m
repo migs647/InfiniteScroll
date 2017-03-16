@@ -1,5 +1,5 @@
 //
-//  UILabel+UILabel_.m
+//  UILabel+.m
 //  InfiniteScroll
 //
 //  Created by Cody Garvin on 3/15/17.
@@ -16,17 +16,12 @@
     [style setLineBreakMode:NSLineBreakByWordWrapping];
     
     // make dictionary of attributes with paragraph style
-    NSDictionary *sizeAttributes = @{NSFontAttributeName:self.font, NSParagraphStyleAttributeName: style};
+    NSDictionary *sizeAttributes = @{NSFontAttributeName:self.font,
+                                     NSParagraphStyleAttributeName: style};
     
-    CGRect frame = [self.text boundingRectWithSize:constraintSize options:NSStringDrawingUsesLineFragmentOrigin attributes:sizeAttributes context:nil];
-    
-    /*
-     // OLD
-     CGSize stringSize = [self sizeWithFont:font
-     constrainedToSize:constraintSize
-     lineBreakMode:lineBreakMode];
-     // OLD
-     */
+    CGRect frame = [self.text boundingRectWithSize:constraintSize
+                                           options:NSStringDrawingUsesLineFragmentOrigin
+                                        attributes:sizeAttributes context:nil];
     
     return frame;
 }

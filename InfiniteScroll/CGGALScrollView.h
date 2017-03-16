@@ -1,5 +1,5 @@
 //
-//  ContinuousScrollView.h
+//  CGGALScrollView.h
 //  InfiniteScroll
 //
 //  Created by Cody Garvin on 3/12/17.
@@ -12,9 +12,9 @@
 
 /**
  The dataSource that provides layout information for an instance of 
- ContinuousScrollView.
+ CGGALScrollView.
  */
-@protocol ContinuousScrollViewDataSource <NSObject>
+@protocol CGGALScrollViewDataSource <NSObject>
 
 /// The number of labels to display.
 - (NSInteger)numberOfLabels;
@@ -28,12 +28,11 @@
  A scrollview done in autolayout that will scroll indefinitely one direction 
  or another.
  */
-IB_DESIGNABLE @interface ContinuousScrollView : UIScrollView
+IB_DESIGNABLE @interface CGGALScrollView : UIScrollView
 
 /// An instance that adheres to ContinousScrollViewDataSource to
 /// provide data for layout procedures for the scrollview.
-@property (nonatomic, weak) id<ContinuousScrollViewDataSource> dataSource;
-
+@property (nonatomic, weak) id<CGGALScrollViewDataSource> dataSource;
 
 /**
  Reloads the scrollview so all items refresh appropriately.

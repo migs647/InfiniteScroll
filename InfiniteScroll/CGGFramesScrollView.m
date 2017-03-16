@@ -9,8 +9,8 @@
 #import "CGGFramesScrollView.h"
 #import "UILabel+.h"
 
-NSInteger kInfiniteScrollViewLabelTopMargin = 32;
-NSInteger kInfiniteScrollViewLabelSideMargin = 16;
+NSInteger kCGGFramesScrollViewLabelTopMargin = 32;
+NSInteger kCGGFramesScrollViewLabelSideMargin = 16;
 
 typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
     ScrollDirectionNone,
@@ -67,7 +67,7 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Layout and building implementations
+#pragma mark - Public Methods
 - (void)reload
 {
     // Ignore any reloads
@@ -97,9 +97,60 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
                                              selector:@selector(orientationChanged:)
                                                  name:UIDeviceOrientationDidChangeNotification
                                                object:nil];
-
+    
 }
 
+- (void)reloadLabelAtIndex:(NSInteger)index
+{
+    __block NSInteger tempIndex = index;
+    // Don't allow fluffery
+    if (index < 0)
+    {
+        return;
+    }
+    
+    if (_dataSource && [_dataSource respondsToSelector:@selector(labelAtIndex:)])
+    {
+        UILabel *label = [_labelsLaidout objectAtIndex:tempIndex];
+        label.numberOfLines = 0;
+    
+        CGRect expandedSize = [label sizeForCurrentString:CGSizeMake(self.contentSize.width - (kCGGFramesScrollViewLabelSideMargin*2), INT_MAX)];
+        
+        __block CGRect frameForCurrentLabel = label.frame;
+        frameForCurrentLabel.size = expandedSize.size;
+        
+        // From the index down we need to redraw as some may have been expanded
+        [UIView
+         animateWithDuration:.33
+         delay:0
+         options:UIViewAnimationOptionCurveEaseIn
+         animations:
+         ^{
+             label.frame = frameForCurrentLabel;
+
+             CGFloat previousCellHeightOrigin = frameForCurrentLabel.size.height + frameForCurrentLabel.origin.y;
+             // Increment the index so we can grab the next cell
+             ++tempIndex;
+             while (tempIndex < [self.labelsLaidout count])
+             {
+                 UILabel *nextLabel = [self.labelsLaidout objectAtIndex:tempIndex];
+                 frameForCurrentLabel = nextLabel.frame;
+                 frameForCurrentLabel.origin.y = previousCellHeightOrigin + kCGGFramesScrollViewLabelTopMargin;
+                 nextLabel.frame = frameForCurrentLabel;
+                 
+                 previousCellHeightOrigin = frameForCurrentLabel.size.height + frameForCurrentLabel.origin.y;
+                 tempIndex++;
+             }
+             
+         }
+         completion:nil];
+        
+        
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Layout and building implementations
 - (void)buildContainerView
 {
     if (self.currentContainerView)
@@ -120,7 +171,7 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
     self.currentContainerView.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
     [self addSubview:self.currentContainerView];
     
-    [self.currentContainerView setUserInteractionEnabled:NO];
+//    [self.currentContainerView setUserInteractionEnabled:NO];
 }
 
 - (void)addLabels
@@ -145,6 +196,12 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
                 {
                     break;
                 }
+                
+                UITapGestureRecognizer *tapGesture =
+                [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelTapped:)];
+                [label addGestureRecognizer:tapGesture];
+                
+                label.userInteractionEnabled = YES;
                 
                 // Officially add the label
                 [self.currentContainerView addSubview:label];
@@ -213,7 +270,7 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
             
             // Adjust the frame
             CGRect frame = firstElement.frame;
-            frame.origin.y = bottom + kInfiniteScrollViewLabelTopMargin;
+            frame.origin.y = bottom + kCGGFramesScrollViewLabelTopMargin;
             firstElement.frame = frame;
             bottom = CGRectGetMaxY(firstElement.frame);
         }
@@ -231,7 +288,7 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
             
             // Adjust the positioning
             CGRect frame = lastElement.frame;
-            frame.origin.y = top - frame.size.height - kInfiniteScrollViewLabelTopMargin;
+            frame.origin.y = top - frame.size.height - kCGGFramesScrollViewLabelTopMargin;
             lastElement.frame = frame;
             top = CGRectGetMinY(lastElement.frame);
         }
@@ -243,10 +300,10 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
 
 - (void)adjustLabelFrames
 {
-    CGPoint lastOrigin = CGPointMake(kInfiniteScrollViewLabelSideMargin, kInfiniteScrollViewLabelTopMargin + self.bounds.size.height);
+    CGPoint lastOrigin = CGPointMake(kCGGFramesScrollViewLabelSideMargin, kCGGFramesScrollViewLabelTopMargin + self.bounds.size.height);
     for (UILabel *label in self.labelsLaidout)
     {
-        CGFloat width = self.contentSize.width - (kInfiniteScrollViewLabelSideMargin * 2);
+        CGFloat width = self.contentSize.width - (kCGGFramesScrollViewLabelSideMargin * 2);
         CGSize constraint = CGSizeMake(width, 3 * label.font.lineHeight);
         CGRect sizeRect = [label sizeForCurrentString:constraint];
         CGRect frame = label.frame;
@@ -256,7 +313,7 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
         label.frame = frame;
         
         // Update last origin
-        lastOrigin.y += frame.size.height + kInfiniteScrollViewLabelTopMargin;
+        lastOrigin.y += frame.size.height + kCGGFramesScrollViewLabelTopMargin;
     }
 }
 
@@ -273,6 +330,14 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
     CGRect visibleBounds = [self convertRect:[self bounds] toView:self.currentContainerView];
 
     [self adjustLabelLayoutMin:CGRectGetMinY(visibleBounds) toMax:CGRectGetMaxY(visibleBounds)];
+}
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Gesture Recognizer Methods
+- (void)labelTapped:(UITapGestureRecognizer *)tapGesture
+{
+    NSLog(@"View: %@", tapGesture.view);
+    [self reloadLabelAtIndex:tapGesture.view.tag];
 }
 
 ////////////////////////////////////////////////////////////////////////////////

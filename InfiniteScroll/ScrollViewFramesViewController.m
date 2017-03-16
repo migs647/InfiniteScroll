@@ -7,16 +7,26 @@
 //
 
 #import "ScrollViewFramesViewController.h"
+#import "ScrollDataModel.h"
+#import "iTunesXMLParser.h"
+#import "CGGFramesScrollView.h"
 
-@interface ScrollViewFramesViewController ()
-
+@interface ScrollViewFramesViewController () <CGGFramesScrollViewDataSource, iTunesXMLParserDelegate>
+@property (nonatomic, strong) NSArray *scrollData;
+@property (nonatomic, weak) IBOutlet CGGFramesScrollView *frameScrollView;
+@property (nonatomic, strong) NSArray *dataArray;
 @end
 
 @implementation ScrollViewFramesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+        
+    [self loadData];
+    
+    // Do any additional setup after loading the view, typically from a nib.
+    [self.frameScrollView setDataSource:self];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +34,46 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)loadData
+{
+    self.dataArray = [[NSMutableArray alloc] init];
+    
+    // Parse the feed for songs!! songs!!
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"topsongs" withExtension:@"xml"];
+    iTunesXMLParser *parser = [[iTunesXMLParser alloc] init];
+    parser.parserDelegate = self;
+    [parser parseWithURL:url];
 }
-*/
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - iTunesXMLParserDelegate Methods
+- (void)parsingDidFinishWithData:(NSArray *)data error:(NSError *)error
+{
+    self.dataArray = data;
+    [_frameScrollView reload];
+}
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - ContinuousScrollViewDataSource Methods
+- (NSInteger)numberOfLabels
+{
+    return [_dataArray count];
+}
+
+- (UILabel *)labelAtIndex:(NSInteger)index
+{
+    UILabel *returnLabel = nil;
+    if ([_dataArray count] > index)
+    {
+        ScrollDataModel *dataModel = [_dataArray objectAtIndex:index];
+        returnLabel = [[UILabel alloc] init];
+        returnLabel.text = [NSString stringWithFormat:@"%zd - %@", index+1, dataModel.text];
+        returnLabel.tag = index;
+        returnLabel.numberOfLines = 3;
+        returnLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    }
+    
+    return returnLabel;
+}
 
 @end

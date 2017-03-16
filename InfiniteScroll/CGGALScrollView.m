@@ -1,30 +1,30 @@
 //
-//  ContinuousScrollView.m
+//  CGGALScrollView.m
 //  InfiniteScroll
 //
 //  Created by Cody Garvin on 3/12/17.
 //  Copyright © 2017 Cody Garvin. All rights reserved.
 //
 
-#import "ContinuousScrollView.h"
+#import "CGGALScrollView.h"
 
-NSInteger kContinuousScrollViewLabelTopMargin = 32;
-NSInteger kContinuousScrollViewLabelSideMargin = 16;
+NSInteger kCGGALScrollViewLabelTopMargin = 32;
+NSInteger kCGGALScrollViewLabelSideMargin = 16;
 
-typedef NS_ENUM(NSUInteger, ScrollDirection) {
+typedef NS_ENUM(NSUInteger, CGGALScrollViewScrollDirection) {
     ScrollDirectionNone,
     ScrollDirectionUp,
     ScrollDirectionDown
 };
 
-@interface ContinuousScrollView () <UIScrollViewDelegate>
+@interface CGGALScrollView () <UIScrollViewDelegate>
 @property (nonatomic, strong) NSArray *labelContainersLaidout;
 @property (nonatomic, strong) UIView *currentContainerView;
 @property (nonatomic, strong) NSArray *verticalLabelConstraints;
 @property (nonatomic, assign) CGFloat lastContentOffset;
 @end
 
-@implementation ContinuousScrollView
+@implementation CGGALScrollView
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
@@ -50,7 +50,10 @@ typedef NS_ENUM(NSUInteger, ScrollDirection) {
     return self;
 }
 
-- (void)reload {
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Public Methods
+- (void)reload
+{
     
     // Reset our world
     self.labelContainersLaidout = nil;
@@ -67,6 +70,55 @@ typedef NS_ENUM(NSUInteger, ScrollDirection) {
     [self setNeedsLayout];
 }
 
+- (void)reloadLabelAtIndex:(NSInteger)index
+{
+    // Don't allow fluffery
+    if (index < 0)
+    {
+        return;
+    }
+    
+    if (_dataSource && [_dataSource respondsToSelector:@selector(labelAtIndex:)])
+    {
+        for (UIView *container in self.labelContainersLaidout)
+        {
+            // Find the label
+            UILabel *currentLabel = [container viewWithTag:index];
+            if (currentLabel && [currentLabel isKindOfClass:[UILabel class]])
+            {
+                currentLabel.numberOfLines = 0;
+            }
+        }
+//        UILabel *label = [_labelsLaidout objectAtIndex:index];
+//        label.numberOfLines = 0;
+//
+//        CGRect expandedSize = [label sizeForCurrentString:CGSizeMake(self.contentSize.width - (kCGGFramesScrollViewLabelSideMargin*2), INT_MAX)];
+//        
+//        CGRect frameForCurrentLabel = label.frame;
+//        frameForCurrentLabel.size = expandedSize.size;
+//        label.frame = frameForCurrentLabel;
+//        
+//        // From the index down we need to redraw as some may have been expanded
+//        CGFloat previousCellHeightOrigin = frameForCurrentLabel.size.height + frameForCurrentLabel.origin.y;
+//        
+//        // Increment the index so we can grab the next cell
+//        ++index;
+//        while (index < [self.labelsLaidout count])
+//        {
+//            UILabel *nextLabel = [self.labelsLaidout objectAtIndex:index];
+//            frameForCurrentLabel = nextLabel.frame;
+//            frameForCurrentLabel.origin.y = previousCellHeightOrigin + kCGGFramesScrollViewLabelTopMargin;
+//            nextLabel.frame = frameForCurrentLabel;
+//            
+//            previousCellHeightOrigin = frameForCurrentLabel.size.height + frameForCurrentLabel.origin.y;
+//            index++;
+//        }
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Hidden Methods
 - (void)buildContainerView
 {
     self.delegate = self;
@@ -159,6 +211,7 @@ typedef NS_ENUM(NSUInteger, ScrollDirection) {
         {
             // Grab a label for the current index
             UILabel *label = [_dataSource labelAtIndex:index];
+            label.tag = index;
             
             // If we don't have a label something went wrong -- bail out
             if (!label)
@@ -172,13 +225,18 @@ typedef NS_ENUM(NSUInteger, ScrollDirection) {
             // Append to the labelConstraintString
             labelConstraintString =
             [NSString stringWithFormat:@"%@-%zd-[%@]", labelConstraintString,
-             kContinuousScrollViewLabelTopMargin, viewName];
+             kCGGALScrollViewLabelTopMargin, viewName];
             
             // Add to the labelConstraintDictionary
             [labelConstraintDictionary setObject:label forKey:viewName];
             
             // Make sure that we're autolayout compatible before adding
             label.translatesAutoresizingMaskIntoConstraints = NO;
+            
+            // Add a tap watcher
+            label.userInteractionEnabled = YES;
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelTapped:)];
+            [label addGestureRecognizer:tapGesture];
             
             // Officially add the label
             [labelContainerView addSubview:label];
@@ -209,7 +267,7 @@ typedef NS_ENUM(NSUInteger, ScrollDirection) {
     // Build the horizontal constraint string with the right names
     NSString *horizontalConstraintString =
     [NSString stringWithFormat:@"H:|-%zd-[%@]-%zd-|",
-     kContinuousScrollViewLabelSideMargin, viewName, kContinuousScrollViewLabelSideMargin];
+     kCGGALScrollViewLabelSideMargin, viewName, kCGGALScrollViewLabelSideMargin];
     
     // Build the constraints now that we have the string
     NSArray *horizontalConstraints =
@@ -240,14 +298,14 @@ typedef NS_ENUM(NSUInteger, ScrollDirection) {
     }
     self.verticalLabelConstraints = [NSLayoutConstraint
                                      constraintsWithVisualFormat:@"V:|[labelSet1][labelSet2][labelSet3]-padding-|"
-                                     options:0 metrics:@{@"padding": @(kContinuousScrollViewLabelTopMargin)}
+                                     options:0 metrics:@{@"padding": @(kCGGALScrollViewLabelTopMargin)}
                                      views:constraintsDictionary];
     [NSLayoutConstraint activateConstraints:self.verticalLabelConstraints];
     
     [self setNeedsUpdateConstraints];
 }
 
-- (void)calibratePositionForDirection:(ScrollDirection)direction
+- (void)calibratePositionForDirection:(CGGALScrollViewScrollDirection)direction
 {
     // Grab some attributes about our scrolled area and content area to
     // calculate the need to reposition our content view
@@ -273,7 +331,7 @@ typedef NS_ENUM(NSUInteger, ScrollDirection) {
     }
 }
 
-- (void)adjustTileLayoutForDirection:(ScrollDirection)direction
+- (void)adjustTileLayoutForDirection:(CGGALScrollViewScrollDirection)direction
 {
     // Get out of here if we don't have a proper set up
     if ([_labelContainersLaidout count] < 3)
@@ -302,7 +360,7 @@ typedef NS_ENUM(NSUInteger, ScrollDirection) {
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     // Figure out the direction we're going so we know how to tile
-    ScrollDirection scrollDirection;
+    CGGALScrollViewScrollDirection scrollDirection;
     if (self.lastContentOffset > scrollView.contentOffset.y)
         scrollDirection = ScrollDirectionDown;
     else if (self.lastContentOffset < scrollView.contentOffset.y)
@@ -314,4 +372,12 @@ typedef NS_ENUM(NSUInteger, ScrollDirection) {
     [self calibratePositionForDirection:scrollDirection];
 }
 
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Gesture Recognizer Methods
+- (void)labelTapped:(UITapGestureRecognizer *)tapGesture
+{
+    NSLog(@"View: %@", tapGesture.view);
+    [self reloadLabelAtIndex:tapGesture.view.tag];
+}
 @end

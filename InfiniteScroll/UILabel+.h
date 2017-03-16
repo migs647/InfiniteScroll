@@ -1,5 +1,5 @@
 //
-//  UILabel+UILabel_.h
+//  UILabel+.h
 //  InfiniteScroll
 //
 //  Created by Cody Garvin on 3/15/17.

@@ -10,4 +10,6 @@
 
 @interface CGGLabel : UILabel
 
+@property (nonatomic, strong) UIImage *image;
+
 @end
