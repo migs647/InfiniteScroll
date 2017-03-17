@@ -10,6 +10,7 @@
 #import "ScrollDataModel.h"
 #import "iTunesXMLParser.h"
 #import "CGGFramesScrollView.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface ScrollViewFramesViewController () <CGGFramesScrollViewDataSource, iTunesXMLParserDelegate>
 @property (nonatomic, strong) NSArray *scrollData;
@@ -36,13 +37,38 @@
 
 - (void)loadData
 {
+    // Load the data from AFNetworking instead of the built-in xml
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    AFXMLParserResponseSerializer *responseSerializer = [AFXMLParserResponseSerializer serializer];
+    NSMutableSet *currentContentTypes = responseSerializer.acceptableContentTypes.mutableCopy;
+    [currentContentTypes addObject:@"application/atom+xml"];
+    responseSerializer.acceptableContentTypes = [NSSet setWithSet:currentContentTypes];
+    manager.responseSerializer = responseSerializer;
+    
+    NSURL *URL = [NSURL URLWithString:@"https://itunes.apple.com/us/rss/topsongs/limit=10/xml"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+        } else {
+            NSLog(@"%@ %@", response, responseObject);
+            [self parseXMLPayload:responseObject];
+        }
+        
+    }];
+    [dataTask resume];
+}
+
+- (void)parseXMLPayload:(NSXMLParser *)parser
+{
     self.dataArray = [[NSMutableArray alloc] init];
     
     // Parse the feed for songs!! songs!!
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"topsongs" withExtension:@"xml"];
-    iTunesXMLParser *parser = [[iTunesXMLParser alloc] init];
-    parser.parserDelegate = self;
-    [parser parseWithURL:url];
+    iTunesXMLParser *iTunesParser = [[iTunesXMLParser alloc] init];
+    iTunesParser.parserDelegate = self;
+    [iTunesParser parseWithParser:parser];
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -51,6 +77,8 @@
 {
     self.dataArray = data;
     [_frameScrollView reload];
+    
+    // Stop animating hud
 }
 
 ////////////////////////////////////////////////////////////////////////////////

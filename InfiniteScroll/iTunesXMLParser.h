@@ -18,4 +18,5 @@
 @property (nonatomic, weak) id<iTunesXMLParserDelegate> parserDelegate;
 
 - (void)parseWithURL:(NSURL *)url;
+- (void)parseWithParser:(NSXMLParser *)parser;
 @end

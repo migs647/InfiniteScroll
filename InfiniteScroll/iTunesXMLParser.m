@@ -31,6 +31,15 @@
     });
 }
 
+- (void)parseWithParser:(NSXMLParser *)parser
+{
+    self.dataArray = [[NSMutableArray alloc] init];
+    dispatch_async(dispatch_queue_create("com.xml.itunes", NULL), ^{
+        parser.delegate = self;
+        [parser parse];
+    });
+}
+
 - (void)parsingDidFinishWithError:(NSError *)error;
 {
     NSArray *returnArray = nil;
