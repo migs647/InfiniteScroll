@@ -60,7 +60,7 @@ Remaining Issues:
 
 - Flickering during fast scrolls. The flickering is related to drawing speed as the cells are moved when the content area is moved. A potential fix for this would be to have three sets of cells like the autolayout version has and keep track of state when a cell is expanded.
 
-- Orientation to landscape and back has a large gap. I will fix this.
+- Orientation to landscape and back has a large gap. Potential fix is to recalibrate the content offset so it is a bit lower.
 
 ## Tests
 
