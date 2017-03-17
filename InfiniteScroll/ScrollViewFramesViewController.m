@@ -6,11 +6,13 @@
 //  Copyright © 2017 Cody Garvin. All rights reserved.
 //
 
+#import <AFNetworking/AFNetworking.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+
 #import "ScrollViewFramesViewController.h"
 #import "ScrollDataModel.h"
 #import "iTunesXMLParser.h"
 #import "CGGFramesScrollView.h"
-#import <AFNetworking/AFNetworking.h>
 
 @interface ScrollViewFramesViewController () <CGGFramesScrollViewDataSource, iTunesXMLParserDelegate>
 @property (nonatomic, strong) NSArray *scrollData;
@@ -37,6 +39,10 @@
 
 - (void)loadData
 {
+    // Start animating hud
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    
     // Load the data from AFNetworking instead of the built-in xml
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
@@ -79,6 +85,7 @@
     [_frameScrollView reload];
     
     // Stop animating hud
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 ////////////////////////////////////////////////////////////////////////////////

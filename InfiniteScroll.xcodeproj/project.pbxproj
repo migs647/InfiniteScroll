@@ -24,6 +24,8 @@
 		964438761E7A40DB002CAF0D /* ScrollViewALViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 964438751E7A40DB002CAF0D /* ScrollViewALViewController.m */; };
 		964438791E7A4D03002CAF0D /* CGGLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 964438781E7A4D03002CAF0D /* CGGLabel.m */; };
 		964439221E7C2F4C002CAF0D /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964439131E7C2F36002CAF0D /* AFNetworking.framework */; };
+		9644392C1E7C76AA002CAF0D /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 964439291E7C7694002CAF0D /* libMBProgressHUD.a */; };
+		964439321E7C8956002CAF0D /* iTunesXMLParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 964439311E7C8956002CAF0D /* iTunesXMLParserTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,27 @@
 			remoteGlobalIDString = 299522381BBF104D00859F49;
 			remoteInfo = "AFNetworking iOS";
 		};
+		964439281E7C7694002CAF0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964439231E7C7694002CAF0D /* MBProgressHUD.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D286A7491518C70F00E13FB8;
+			remoteInfo = "MBProgressHUD Static Library";
+		};
+		9644392A1E7C7694002CAF0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964439231E7C7694002CAF0D /* MBProgressHUD.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D104D7A1ACA36CC00973364;
+			remoteInfo = "MBProgressHUD Framework";
+		};
+		9644392D1E7C76CB002CAF0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964439231E7C7694002CAF0D /* MBProgressHUD.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D286A7481518C70F00E13FB8;
+			remoteInfo = "MBProgressHUD Static Library";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +147,8 @@
 		964438771E7A4D03002CAF0D /* CGGLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGLabel.h; sourceTree = "<group>"; };
 		964438781E7A4D03002CAF0D /* CGGLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGLabel.m; sourceTree = "<group>"; };
 		964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AFNetworking.xcodeproj; path = AFNetworking/AFNetworking.xcodeproj; sourceTree = SOURCE_ROOT; };
+		964439231E7C7694002CAF0D /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = SOURCE_ROOT; };
+		964439311E7C8956002CAF0D /* iTunesXMLParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTunesXMLParserTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9644392C1E7C76AA002CAF0D /* libMBProgressHUD.a in Frameworks */,
 				964439221E7C2F4C002CAF0D /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,8 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				964439071E7C2EC9002CAF0D /* Libraries */,
-				9644372A1E761160002CAF0D /* Source */,
 				964437281E761120002CAF0D /* Resource */,
+				9644372A1E761160002CAF0D /* Source */,
 				964436FB1E75EC47002CAF0D /* Supporting Files */,
 			);
 			path = InfiniteScroll;
@@ -187,6 +213,7 @@
 			children = (
 				964437151E75EC47002CAF0D /* InfiniteScrollTests.m */,
 				964437171E75EC47002CAF0D /* Info.plist */,
+				964439311E7C8956002CAF0D /* iTunesXMLParserTests.m */,
 			);
 			path = InfiniteScrollTests;
 			sourceTree = "<group>";
@@ -257,6 +284,7 @@
 		964439071E7C2EC9002CAF0D /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				964439231E7C7694002CAF0D /* MBProgressHUD.xcodeproj */,
 				964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */,
 			);
 			name = Libraries;
@@ -276,6 +304,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		964439241E7C7694002CAF0D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				964439291E7C7694002CAF0D /* libMBProgressHUD.a */,
+				9644392B1E7C7694002CAF0D /* MBProgressHUD.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -290,6 +327,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9644392E1E7C76CB002CAF0D /* PBXTargetDependency */,
 				964439211E7C2F45002CAF0D /* PBXTargetDependency */,
 			);
 			name = InfiniteScroll;
@@ -351,6 +389,10 @@
 					ProductGroup = 964439091E7C2F35002CAF0D /* Products */;
 					ProjectRef = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
 				},
+				{
+					ProductGroup = 964439241E7C7694002CAF0D /* Products */;
+					ProjectRef = 964439231E7C7694002CAF0D /* MBProgressHUD.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -410,6 +452,20 @@
 			remoteRef = 9644391E1E7C2F36002CAF0D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		964439291E7C7694002CAF0D /* libMBProgressHUD.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMBProgressHUD.a;
+			remoteRef = 964439281E7C7694002CAF0D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9644392B1E7C7694002CAF0D /* MBProgressHUD.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MBProgressHUD.framework;
+			remoteRef = 9644392A1E7C7694002CAF0D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -456,6 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				964439321E7C8956002CAF0D /* iTunesXMLParserTests.m in Sources */,
 				964437161E75EC47002CAF0D /* InfiniteScrollTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +529,11 @@
 			isa = PBXTargetDependency;
 			name = "AFNetworking iOS";
 			targetProxy = 964439201E7C2F45002CAF0D /* PBXContainerItemProxy */;
+		};
+		9644392E1E7C76CB002CAF0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MBProgressHUD Static Library";
+			targetProxy = 9644392D1E7C76CB002CAF0D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

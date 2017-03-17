@@ -170,8 +170,6 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
     self.currentContainerView = [[UIView alloc] init];
     self.currentContainerView.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
     [self addSubview:self.currentContainerView];
-    
-//    [self.currentContainerView setUserInteractionEnabled:NO];
 }
 
 - (void)addLabels

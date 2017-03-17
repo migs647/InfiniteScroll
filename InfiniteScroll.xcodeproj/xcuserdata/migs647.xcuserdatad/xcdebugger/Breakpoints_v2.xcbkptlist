@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InfiniteScroll/ScrollViewFramesViewController.m"
-            timestampString = "511457300.181146"
+            timestampString = "511473436.391833"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "-loadData"
             landmarkType = "7">
          </BreakpointContent>
@@ -68,11 +68,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "InfiniteScroll/ScrollViewFramesViewController.m"
-            timestampString = "511457289.176297"
+            timestampString = "511473436.391833"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-parsingDidFinishWithData:error:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InfiniteScrollTests/iTunesXMLParserTests.m"
+            timestampString = "511479125.388568"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-testParseWithURL"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "InfiniteScrollTests/iTunesXMLParserTests.m"
+            timestampString = "511478937.728443"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "-parsingDidFinishWithData:error:"
             landmarkType = "7">
          </BreakpointContent>
