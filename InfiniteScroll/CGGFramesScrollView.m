@@ -9,8 +9,9 @@
 #import "CGGFramesScrollView.h"
 #import "UILabel+.h"
 
-NSInteger kCGGFramesScrollViewLabelTopMargin = 32;
-NSInteger kCGGFramesScrollViewLabelSideMargin = 16;
+NSInteger kCGGFramesScrollViewLabelTopMargin    = 32;
+NSInteger kCGGFramesScrollViewLabelSideMargin   = 16;
+NSInteger kCGGFramesScrollViewTagBase           = 1000;
 
 typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
     ScrollDirectionNone,
@@ -102,51 +103,57 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
 
 - (void)reloadLabelAtIndex:(NSInteger)index
 {
-    __block NSInteger tempIndex = index;
     // Don't allow fluffery
     if (index < 0)
     {
         return;
     }
     
-    if (_dataSource && [_dataSource respondsToSelector:@selector(labelAtIndex:)])
-    {
-        UILabel *label = [_labelsLaidout objectAtIndex:tempIndex];
-        label.numberOfLines = 0;
+    // Grab the label from the view so we can use it to look up index in the
+    // labels laidout
+    UILabel *label = [self.currentContainerView viewWithTag:index];
     
-        CGRect expandedSize = [label sizeForCurrentString:CGSizeMake(self.contentSize.width - (kCGGFramesScrollViewLabelSideMargin*2), INT_MAX)];
-        
-        __block CGRect frameForCurrentLabel = label.frame;
-        frameForCurrentLabel.size = expandedSize.size;
-        
-        // From the index down we need to redraw as some may have been expanded
-        [UIView
-         animateWithDuration:.33
-         delay:0
-         options:UIViewAnimationOptionCurveEaseIn
-         animations:
-         ^{
-             label.frame = frameForCurrentLabel;
-
-             CGFloat previousCellHeightOrigin = frameForCurrentLabel.size.height + frameForCurrentLabel.origin.y;
-             // Increment the index so we can grab the next cell
-             ++tempIndex;
-             while (tempIndex < [self.labelsLaidout count])
-             {
-                 UILabel *nextLabel = [self.labelsLaidout objectAtIndex:tempIndex];
-                 frameForCurrentLabel = nextLabel.frame;
-                 frameForCurrentLabel.origin.y = previousCellHeightOrigin + kCGGFramesScrollViewLabelTopMargin;
-                 nextLabel.frame = frameForCurrentLabel;
-                 
-                 previousCellHeightOrigin = frameForCurrentLabel.size.height + frameForCurrentLabel.origin.y;
-                 tempIndex++;
-             }
-             
-         }
-         completion:nil];
-        
-        
+    // Protect against accidental look ups
+    if (!label || ![label isKindOfClass:[UILabel class]])
+    {
+        NSLog(@"Error: Failed to look up class");
+        return;
     }
+    
+    __block NSInteger indexInLayoutArray = [self.labelsLaidout indexOfObject:label];
+    label.numberOfLines = 0;
+
+    CGRect expandedSize = [label sizeForCurrentString:CGSizeMake(self.contentSize.width - (kCGGFramesScrollViewLabelSideMargin*2), INT_MAX)];
+    
+    __block CGRect frameForCurrentLabel = label.frame;
+    frameForCurrentLabel.size = expandedSize.size;
+    
+    // From the index down we need to redraw as some may have been expanded
+    [UIView
+     animateWithDuration:.33
+     delay:0
+     usingSpringWithDamping:1.0f initialSpringVelocity:0.5f
+     options:UIViewAnimationOptionCurveEaseIn
+     animations:
+     ^{
+         label.frame = frameForCurrentLabel;
+
+         CGFloat previousCellHeightOrigin = frameForCurrentLabel.size.height + frameForCurrentLabel.origin.y;
+         // Increment the index so we can grab the next cell
+         ++indexInLayoutArray;
+         while (indexInLayoutArray < [self.labelsLaidout count])
+         {
+             UILabel *nextLabel = [self.labelsLaidout objectAtIndex:indexInLayoutArray];
+             frameForCurrentLabel = nextLabel.frame;
+             frameForCurrentLabel.origin.y = previousCellHeightOrigin + kCGGFramesScrollViewLabelTopMargin;
+             nextLabel.frame = frameForCurrentLabel;
+             
+             previousCellHeightOrigin = frameForCurrentLabel.size.height + frameForCurrentLabel.origin.y;
+             indexInLayoutArray++;
+         }
+         
+     }
+     completion:nil];
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -187,7 +194,7 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
             {
                 // Grab a label for the current index
                 UILabel *label = [_dataSource labelAtIndex:index];
-                label.tag = index;
+                label.tag = index + kCGGFramesScrollViewTagBase; // Use 1000 offset to prevent accidental look ups in the content view
                 
                 // If we don't have a label something went wrong -- bail out
                 if (!label || ![label isKindOfClass:[UILabel class]])
@@ -298,7 +305,8 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
 
 - (void)adjustLabelFrames
 {
-    CGPoint lastOrigin = CGPointMake(kCGGFramesScrollViewLabelSideMargin, kCGGFramesScrollViewLabelTopMargin + self.bounds.size.height);
+    CGPoint lastOrigin = CGPointMake(kCGGFramesScrollViewLabelSideMargin,
+                                     kCGGFramesScrollViewLabelTopMargin + self.bounds.size.height);
     for (UILabel *label in self.labelsLaidout)
     {
         CGFloat width = self.contentSize.width - (kCGGFramesScrollViewLabelSideMargin * 2);

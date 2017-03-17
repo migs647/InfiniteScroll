@@ -8,9 +8,13 @@
 
 #import "CGGLabel.h"
 
+CGFloat kCGGLabelTopMargin = 10.0f;
+CGFloat kCGGLabelSideMargin = 10.0f;
+CGFloat kCGGLabelSize = 72.0f;
+
 @interface CGGLabel ()
 @property (nonatomic, strong) UILabel *label;
-@property (nonatomic, strong) UIView *imageView;
+@property (nonatomic, strong) UIImageView *imageView;
 @end
 
 @implementation CGGLabel
@@ -54,18 +58,34 @@
 #pragma mark - Getters / Setters Methods
 - (void)setImage:(UIImage *)image
 {
+    // Lazy Instantiation
+    if (!_imageView)
+    {
+        self.imageView = [[UIImageView alloc] init];
+        
+        // TODO: Position the imageView later when the team wants it
+    }
     
+    [self.imageView setImage:image];
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Methods
 - (void)configure
 {
-//    self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
-//    _imageView.backgroundColor = [UIColor grayColor];
-//    [self addSubview:_imageView];
     
     
 }
 
+- (void)createImageView
+{
+    if (self.imageView)
+    { // No need to create another
+        return;
+    }
+    
+    CGRect imageSize = CGRectMake(kCGGLabelSideMargin, kCGGLabelTopMargin, kCGGLabelSize, kCGGLabelSize);
+    self.imageView = [[UIImageView alloc] initWithFrame:imageSize];
+    [self addSubview:self.imageView];
+}
 @end

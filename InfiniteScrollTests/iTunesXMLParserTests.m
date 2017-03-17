@@ -29,9 +29,7 @@
 }
 
 - (void)testParseWithURL {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-    
+
     // Parse the feed for songs!! songs!!
     NSURL *url = [[NSBundle mainBundle] URLForResource:@"topsongs" withExtension:@"xml"];
     iTunesXMLParser *parser = [[iTunesXMLParser alloc] init];
@@ -45,17 +43,77 @@
     }];
 }
 
-- (void)testPerformanceExample {
-
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+- (void)testParseWithURLFailure {
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"topsongs_bad" withExtension:@"xml"];
+    iTunesXMLParser *parser = [[iTunesXMLParser alloc] init];
+    parser.parserDelegate = self;
+    [parser parseWithURL:url];
+    
+    expectation = [self expectationWithDescription:@"parse_error"];
+    
+    [self waitForExpectationsWithTimeout:5 handler:^(NSError * _Nullable error) {
+        XCTAssertNil(error, "Error");
     }];
 }
 
+- (void)testParseWithParser {
+    NSXMLParser *parser =
+    [[NSXMLParser alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"topsongs" withExtension:@"xml"]];
+    
+    iTunesXMLParser *iTunesParser = [[iTunesXMLParser alloc] init];
+    iTunesParser.parserDelegate = self;
+    [iTunesParser parseWithParser:parser];
+    
+    expectation = [self expectationWithDescription:@"parse"];
+    
+    [self waitForExpectationsWithTimeout:5 handler:^(NSError * _Nullable error) {
+        XCTAssertNil(error, "Error");
+    }];
+}
+
+- (void)testParseWithParserFailure {
+    NSXMLParser *parser =
+    [[NSXMLParser alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"topsongs_bad" withExtension:@"xml"]];
+    
+    iTunesXMLParser *iTunesParser = [[iTunesXMLParser alloc] init];
+    iTunesParser.parserDelegate = self;
+    [iTunesParser parseWithParser:parser];
+    
+    expectation = [self expectationWithDescription:@"parse_error"];
+    
+    [self waitForExpectationsWithTimeout:5 handler:^(NSError * _Nullable error) {
+        XCTAssertNil(error, "Error");
+    }];
+}
+
+
+- (void)testPerformanceExample {
+
+    [self measureBlock:^{
+        // Make sure the parser is staying performant
+        NSURL *url = [[NSBundle mainBundle] URLForResource:@"topsongs_bad" withExtension:@"xml"];
+        iTunesXMLParser *parser = [[iTunesXMLParser alloc] init];
+        parser.parserDelegate = self;
+        [parser parseWithURL:url];
+    }];
+}
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - iTunesXMLParserDelegate Methods
 - (void)parsingDidFinishWithData:(NSArray *)data error:(NSError *)error
 {
     callBackInvoked = YES;
-    [expectation fulfill];
+    if ([[expectation description] isEqualToString:@"parse_error"]) {
+        if (error) {
+            [expectation fulfill];
+        }
+    } else {
+        [expectation fulfill];
+    }
+    
 }
+
+
 
 @end

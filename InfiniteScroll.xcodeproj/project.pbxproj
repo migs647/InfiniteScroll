@@ -26,6 +26,7 @@
 		964439221E7C2F4C002CAF0D /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964439131E7C2F36002CAF0D /* AFNetworking.framework */; };
 		9644392C1E7C76AA002CAF0D /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 964439291E7C7694002CAF0D /* libMBProgressHUD.a */; };
 		964439321E7C8956002CAF0D /* iTunesXMLParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 964439311E7C8956002CAF0D /* iTunesXMLParserTests.m */; };
+		964439341E7C90AF002CAF0D /* topsongs_bad.xml in Resources */ = {isa = PBXBuildFile; fileRef = 964439331E7C90AF002CAF0D /* topsongs_bad.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,7 @@
 		964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AFNetworking.xcodeproj; path = AFNetworking/AFNetworking.xcodeproj; sourceTree = SOURCE_ROOT; };
 		964439231E7C7694002CAF0D /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = SOURCE_ROOT; };
 		964439311E7C8956002CAF0D /* iTunesXMLParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTunesXMLParserTests.m; sourceTree = "<group>"; };
+		964439331E7C90AF002CAF0D /* topsongs_bad.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = topsongs_bad.xml; path = Mocks/topsongs_bad.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +254,7 @@
 				964437091E75EC47002CAF0D /* LaunchScreen.storyboard */,
 				964437041E75EC47002CAF0D /* Main.storyboard */,
 				9644372B1E76126E002CAF0D /* topsongs.xml */,
+				964439331E7C90AF002CAF0D /* topsongs_bad.xml */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 			files = (
 				9644372C1E76126E002CAF0D /* topsongs.xml in Resources */,
 				9644370B1E75EC47002CAF0D /* LaunchScreen.storyboard in Resources */,
+				964439341E7C90AF002CAF0D /* topsongs_bad.xml in Resources */,
 				964437081E75EC47002CAF0D /* Assets.xcassets in Resources */,
 				964437061E75EC47002CAF0D /* Main.storyboard in Resources */,
 			);
