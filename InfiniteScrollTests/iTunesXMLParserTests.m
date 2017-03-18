@@ -9,11 +9,14 @@
 #import <XCTest/XCTest.h>
 #import "iTunesXMLParser.h"
 
+typedef void(^iTunesXMLParserTestBlock)(NSError *error);
+
 @interface iTunesXMLParserTests : XCTestCase <iTunesXMLParserDelegate>
 {
     BOOL callBackInvoked;
-    XCTestExpectation *expectation;
 }
+@property (nonatomic, copy) iTunesXMLParserTestBlock fullFillBlock;
+@property (nonatomic, strong) XCTestExpectation *expectation;
 @end
 
 @implementation iTunesXMLParserTests
@@ -36,11 +39,17 @@
     parser.parserDelegate = self;
     [parser parseWithURL:url];
 
-    expectation = [self expectationWithDescription:@"parse"];
+    self.expectation = [self expectationWithDescription:@"parse"];
+    
+    iTunesXMLParserTests __weak *weakSelf = self;
+    self.fullFillBlock = ^(NSError *error){
+        [weakSelf.expectation fulfill];
+    };
 
     [self waitForExpectationsWithTimeout:5 handler:^(NSError * _Nullable error) {
         XCTAssertNil(error, "Error");
     }];
+
 }
 
 - (void)testParseWithURLFailure {
@@ -50,7 +59,14 @@
     parser.parserDelegate = self;
     [parser parseWithURL:url];
     
-    expectation = [self expectationWithDescription:@"parse_error"];
+    self.expectation = [self expectationWithDescription:@"parse_error"];
+    
+    iTunesXMLParserTests __weak *weakSelf = self;
+    self.fullFillBlock = ^(NSError *error){
+        if (error) {
+            [weakSelf.expectation fulfill];
+        }
+    };
     
     [self waitForExpectationsWithTimeout:5 handler:^(NSError * _Nullable error) {
         XCTAssertNil(error, "Error");
@@ -65,8 +81,13 @@
     iTunesParser.parserDelegate = self;
     [iTunesParser parseWithParser:parser];
     
-    expectation = [self expectationWithDescription:@"parse"];
+    self.expectation = [self expectationWithDescription:@"parse"];
     
+    iTunesXMLParserTests __weak *weakSelf = self;
+    self.fullFillBlock = ^(NSError *error){
+        [weakSelf.expectation fulfill];
+    };
+
     [self waitForExpectationsWithTimeout:5 handler:^(NSError * _Nullable error) {
         XCTAssertNil(error, "Error");
     }];
@@ -80,13 +101,40 @@
     iTunesParser.parserDelegate = self;
     [iTunesParser parseWithParser:parser];
     
-    expectation = [self expectationWithDescription:@"parse_error"];
+    self.expectation = [self expectationWithDescription:@"parse_error"];
+    
+    iTunesXMLParserTests __weak *weakSelf = self;
+    self.fullFillBlock = ^(NSError *error){
+        if (error) {
+            [weakSelf.expectation fulfill];
+        }
+    };
     
     [self waitForExpectationsWithTimeout:5 handler:^(NSError * _Nullable error) {
         XCTAssertNil(error, "Error");
     }];
 }
 
+- (void)test {
+    
+    // Parse the feed for songs!! songs!!
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"topsongs" withExtension:@"xml"];
+    iTunesXMLParser *parser = [[iTunesXMLParser alloc] init];
+    parser.parserDelegate = self;
+    [parser parseWithURL:url];
+    
+    self.expectation = [self expectationWithDescription:@"parse"];
+    
+    iTunesXMLParserTests __weak *weakSelf = self;
+    self.fullFillBlock = ^(NSError *error){
+        [weakSelf.expectation fulfill];
+    };
+    
+    [self waitForExpectationsWithTimeout:5 handler:^(NSError * _Nullable error) {
+        XCTAssertNil(error, "Error");
+    }];
+    
+}
 
 - (void)testPerformanceExample {
 
@@ -104,14 +152,9 @@
 - (void)parsingDidFinishWithData:(NSArray *)data error:(NSError *)error
 {
     callBackInvoked = YES;
-    if ([[expectation description] isEqualToString:@"parse_error"]) {
-        if (error) {
-            [expectation fulfill];
-        }
-    } else {
-        [expectation fulfill];
+    if (self.fullFillBlock) {
+        self.fullFillBlock(error);
     }
-    
 }
 
 

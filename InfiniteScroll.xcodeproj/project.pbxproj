@@ -22,11 +22,14 @@
 		964438701E79E997002CAF0D /* UILabel+.m in Sources */ = {isa = PBXBuildFile; fileRef = 9644386F1E79E997002CAF0D /* UILabel+.m */; };
 		964438731E7A40CC002CAF0D /* ScrollViewFramesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 964438721E7A40CC002CAF0D /* ScrollViewFramesViewController.m */; };
 		964438761E7A40DB002CAF0D /* ScrollViewALViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 964438751E7A40DB002CAF0D /* ScrollViewALViewController.m */; };
-		964438791E7A4D03002CAF0D /* CGGLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 964438781E7A4D03002CAF0D /* CGGLabel.m */; };
 		964439221E7C2F4C002CAF0D /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964439131E7C2F36002CAF0D /* AFNetworking.framework */; };
 		9644392C1E7C76AA002CAF0D /* libMBProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 964439291E7C7694002CAF0D /* libMBProgressHUD.a */; };
 		964439321E7C8956002CAF0D /* iTunesXMLParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 964439311E7C8956002CAF0D /* iTunesXMLParserTests.m */; };
 		964439341E7C90AF002CAF0D /* topsongs_bad.xml in Resources */ = {isa = PBXBuildFile; fileRef = 964439331E7C90AF002CAF0D /* topsongs_bad.xml */; };
+		964439361E7CB062002CAF0D /* ScrollDataModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 964439351E7CB062002CAF0D /* ScrollDataModelTests.m */; };
+		964439381E7CB38E002CAF0D /* UILabelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 964439371E7CB38E002CAF0D /* UILabelTests.m */; };
+		9644393A1E7CB828002CAF0D /* ScrollViewALViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 964439391E7CB828002CAF0D /* ScrollViewALViewControllerTests.m */; };
+		969232521E7CBD24004463DB /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 969232511E7CBD24004463DB /* libOCMock.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,12 +148,14 @@
 		964438721E7A40CC002CAF0D /* ScrollViewFramesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewFramesViewController.m; sourceTree = "<group>"; };
 		964438741E7A40DB002CAF0D /* ScrollViewALViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewALViewController.h; sourceTree = "<group>"; };
 		964438751E7A40DB002CAF0D /* ScrollViewALViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewALViewController.m; sourceTree = "<group>"; };
-		964438771E7A4D03002CAF0D /* CGGLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGLabel.h; sourceTree = "<group>"; };
-		964438781E7A4D03002CAF0D /* CGGLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGLabel.m; sourceTree = "<group>"; };
 		964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AFNetworking.xcodeproj; path = AFNetworking/AFNetworking.xcodeproj; sourceTree = SOURCE_ROOT; };
 		964439231E7C7694002CAF0D /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = SOURCE_ROOT; };
 		964439311E7C8956002CAF0D /* iTunesXMLParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTunesXMLParserTests.m; sourceTree = "<group>"; };
 		964439331E7C90AF002CAF0D /* topsongs_bad.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = topsongs_bad.xml; path = Mocks/topsongs_bad.xml; sourceTree = "<group>"; };
+		964439351E7CB062002CAF0D /* ScrollDataModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollDataModelTests.m; sourceTree = "<group>"; };
+		964439371E7CB38E002CAF0D /* UILabelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILabelTests.m; sourceTree = "<group>"; };
+		964439391E7CB828002CAF0D /* ScrollViewALViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewALViewControllerTests.m; sourceTree = "<group>"; };
+		969232511E7CBD24004463DB /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = OCMock/libOCMock.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				969232521E7CBD24004463DB /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +185,7 @@
 				964436FA1E75EC47002CAF0D /* InfiniteScroll */,
 				964437141E75EC47002CAF0D /* InfiniteScrollTests */,
 				964436F91E75EC47002CAF0D /* Products */,
+				969232501E7CBD23004463DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -216,6 +223,9 @@
 				964437151E75EC47002CAF0D /* InfiniteScrollTests.m */,
 				964437171E75EC47002CAF0D /* Info.plist */,
 				964439311E7C8956002CAF0D /* iTunesXMLParserTests.m */,
+				964439351E7CB062002CAF0D /* ScrollDataModelTests.m */,
+				964439371E7CB38E002CAF0D /* UILabelTests.m */,
+				964439391E7CB828002CAF0D /* ScrollViewALViewControllerTests.m */,
 			);
 			path = InfiniteScrollTests;
 			sourceTree = "<group>";
@@ -238,8 +248,6 @@
 				964437211E760337002CAF0D /* CGGALScrollView.m */,
 				9644386B1E78A24C002CAF0D /* CGGFramesScrollView.h */,
 				9644386C1E78A24C002CAF0D /* CGGFramesScrollView.m */,
-				964438771E7A4D03002CAF0D /* CGGLabel.h */,
-				964438781E7A4D03002CAF0D /* CGGLabel.m */,
 				9644386E1E79E997002CAF0D /* UILabel+.h */,
 				9644386F1E79E997002CAF0D /* UILabel+.m */,
 			);
@@ -314,6 +322,14 @@
 				9644392B1E7C7694002CAF0D /* MBProgressHUD.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		969232501E7CBD23004463DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				969232511E7CBD24004463DB /* libOCMock.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,7 +515,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9644372F1E762540002CAF0D /* iTunesXMLParser.m in Sources */,
-				964438791E7A4D03002CAF0D /* CGGLabel.m in Sources */,
 				964437031E75EC47002CAF0D /* ViewController.m in Sources */,
 				964437251E760F75002CAF0D /* ScrollDataModel.m in Sources */,
 				964438701E79E997002CAF0D /* UILabel+.m in Sources */,
@@ -517,7 +532,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				964439321E7C8956002CAF0D /* iTunesXMLParserTests.m in Sources */,
+				964439361E7CB062002CAF0D /* ScrollDataModelTests.m in Sources */,
+				964439381E7CB38E002CAF0D /* UILabelTests.m in Sources */,
 				964437161E75EC47002CAF0D /* InfiniteScrollTests.m in Sources */,
+				9644393A1E7CB828002CAF0D /* ScrollViewALViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +671,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/InfiniteScroll",
+				);
 				INFOPLIST_FILE = InfiniteScroll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.walmart.InfiniteScroll;
@@ -664,6 +686,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/InfiniteScroll",
+				);
 				INFOPLIST_FILE = InfiniteScroll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.walmart.InfiniteScroll;
@@ -675,8 +701,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/InfiniteScroll",
+				);
+				HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)/OCMock/\"/**";
 				INFOPLIST_FILE = InfiniteScrollTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OCMock",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.walmart.InfiniteScrollTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InfiniteScroll.app/InfiniteScroll";
@@ -687,8 +723,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/InfiniteScroll",
+				);
+				HEADER_SEARCH_PATHS = "\"$(PROJECT_DIR)/OCMock/\"/**";
 				INFOPLIST_FILE = InfiniteScrollTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OCMock",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.walmart.InfiniteScrollTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InfiniteScroll.app/InfiniteScroll";

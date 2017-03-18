@@ -32,6 +32,8 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    self.dataArray = nil;
+    self.alScrollView = nil;
 }
 
 - (void)loadData
