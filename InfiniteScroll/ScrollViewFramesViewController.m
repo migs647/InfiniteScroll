@@ -12,7 +12,7 @@
 #import "ScrollViewFramesViewController.h"
 #import "ScrollDataModel.h"
 #import "iTunesXMLParser.h"
-#import "CGGFramesScrollView.h"
+#import <CGGInfiniteScrollView/CGGFramesScrollView.h>
 
 @interface ScrollViewFramesViewController () <CGGFramesScrollViewDataSource, iTunesXMLParserDelegate>
 @property (nonatomic, strong) NSArray *scrollData;

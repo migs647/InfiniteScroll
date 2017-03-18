@@ -9,7 +9,7 @@
 #import "ScrollViewALViewController.h"
 #import "ScrollDataModel.h"
 #import "iTunesXMLParser.h"
-#import "CGGALScrollView.h"
+#import <CGGInfiniteScrollView/CGGALScrollView.h>
 
 @interface ScrollViewALViewController () <CGGALScrollViewDataSource, iTunesXMLParserDelegate>
 @property (nonatomic, strong) NSArray *scrollData;

@@ -131,11 +131,18 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
         return;
     }
     
+    // Grab the index of the object in our layout array to start from there
+    // and move the ones after once it grows
     __block NSInteger indexInLayoutArray = [self.labelsLaidout indexOfObject:label];
+    
+    // Change it to 0 number of lines to account for growth
     label.numberOfLines = 0;
 
-    CGRect expandedSize = [label sizeForCurrentString:CGSizeMake(self.contentSize.width - (kCGGFramesScrollViewLabelSideMargin*2), INT_MAX)];
+    // Grab the new size for the current string
+    CGRect expandedSize = [label sizeForCurrentString:
+                           CGSizeMake(self.contentSize.width - (kCGGFramesScrollViewLabelSideMargin*2), INT_MAX)];
     
+    // Set the new settings up to use in the animation loop
     __block CGRect frameForCurrentLabel = label.frame;
     frameForCurrentLabel.size = expandedSize.size;
     

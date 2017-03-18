@@ -1,5 +1,13 @@
 # InfiniteScroll
-A control to infinitely scroll vertically up and down.
+An iOS control to indefinitely scroll vertically without hitting the end of a scrollview.
+
+## Installation
+
+```bash
+$ git clone git@github.com:migs647/InfiniteScroll.git
+$ cd InfiniteScroll
+$ git submodule init && git submodule update
+```
 
 ## Synopsis
 

@@ -7,10 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "CGGALScrollView.h"
-#import "ScrollDataModel.h"
-#import "iTunesXMLParser.h"
-#import "CGGFramesScrollView.h"
 
 @interface ViewController ()
 @end
