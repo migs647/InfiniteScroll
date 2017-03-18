@@ -1,3 +1,6 @@
 [submodule "Libraries/MBProgressHUD"]
 	path = Libraries/MBProgressHUD
 	url = git@github.com:jdg/MBProgressHUD.git
+[submodule "Libraries/AFNetworking"]
+	path = Libraries/AFNetworking
+	url = git@github.com:AFNetworking/AFNetworking.git

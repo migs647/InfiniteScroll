@@ -22,7 +22,6 @@
 		964438701E79E997002CAF0D /* UILabel+.m in Sources */ = {isa = PBXBuildFile; fileRef = 9644386F1E79E997002CAF0D /* UILabel+.m */; };
 		964438731E7A40CC002CAF0D /* ScrollViewFramesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 964438721E7A40CC002CAF0D /* ScrollViewFramesViewController.m */; };
 		964438761E7A40DB002CAF0D /* ScrollViewALViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 964438751E7A40DB002CAF0D /* ScrollViewALViewController.m */; };
-		964439221E7C2F4C002CAF0D /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964439131E7C2F36002CAF0D /* AFNetworking.framework */; };
 		964439321E7C8956002CAF0D /* iTunesXMLParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 964439311E7C8956002CAF0D /* iTunesXMLParserTests.m */; };
 		964439341E7C90AF002CAF0D /* topsongs_bad.xml in Resources */ = {isa = PBXBuildFile; fileRef = 964439331E7C90AF002CAF0D /* topsongs_bad.xml */; };
 		964439361E7CB062002CAF0D /* ScrollDataModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 964439351E7CB062002CAF0D /* ScrollDataModelTests.m */; };
@@ -40,62 +39,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 964436F71E75EC47002CAF0D;
 			remoteInfo = InfiniteScroll;
-		};
-		964439121E7C2F36002CAF0D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 299522391BBF104D00859F49;
-			remoteInfo = "AFNetworking iOS";
-		};
-		964439141E7C2F36002CAF0D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 299522651BBF129200859F49;
-			remoteInfo = "AFNetworking watchOS";
-		};
-		964439161E7C2F36002CAF0D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 299522771BBF136400859F49;
-			remoteInfo = "AFNetworking OS X";
-		};
-		964439181E7C2F36002CAF0D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2987B0A51BC408A200179A4C;
-			remoteInfo = "AFNetworking tvOS";
-		};
-		9644391A1E7C2F36002CAF0D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 298D7C3B1BC2C79500FD3B3E;
-			remoteInfo = "AFNetworking iOS Tests";
-		};
-		9644391C1E7C2F36002CAF0D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 298D7C4A1BC2C7B200FD3B3E;
-			remoteInfo = "AFNetworking Mac OS X Tests";
-		};
-		9644391E1E7C2F36002CAF0D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2987B0AE1BC408A200179A4C;
-			remoteInfo = "AFNetworking tvOS Tests";
-		};
-		964439201E7C2F45002CAF0D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 299522381BBF104D00859F49;
-			remoteInfo = "AFNetworking iOS";
 		};
 		969232631E7DC716004463DB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -117,6 +60,55 @@
 			proxyType = 1;
 			remoteGlobalIDString = 1D104D791ACA36CC00973364;
 			remoteInfo = "MBProgressHUD Framework";
+		};
+		969232731E7DC9D6004463DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 299522391BBF104D00859F49;
+			remoteInfo = "AFNetworking iOS";
+		};
+		969232751E7DC9D6004463DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 299522651BBF129200859F49;
+			remoteInfo = "AFNetworking watchOS";
+		};
+		969232771E7DC9D6004463DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 299522771BBF136400859F49;
+			remoteInfo = "AFNetworking OS X";
+		};
+		969232791E7DC9D6004463DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2987B0A51BC408A200179A4C;
+			remoteInfo = "AFNetworking tvOS";
+		};
+		9692327B1E7DC9D6004463DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 298D7C3B1BC2C79500FD3B3E;
+			remoteInfo = "AFNetworking iOS Tests";
+		};
+		9692327D1E7DC9D6004463DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 298D7C4A1BC2C7B200FD3B3E;
+			remoteInfo = "AFNetworking Mac OS X Tests";
+		};
+		9692327F1E7DC9D6004463DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2987B0AE1BC408A200179A4C;
+			remoteInfo = "AFNetworking tvOS Tests";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -149,7 +141,7 @@
 		964438721E7A40CC002CAF0D /* ScrollViewFramesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewFramesViewController.m; sourceTree = "<group>"; };
 		964438741E7A40DB002CAF0D /* ScrollViewALViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewALViewController.h; sourceTree = "<group>"; };
 		964438751E7A40DB002CAF0D /* ScrollViewALViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewALViewController.m; sourceTree = "<group>"; };
-		964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AFNetworking.xcodeproj; path = AFNetworking/AFNetworking.xcodeproj; sourceTree = SOURCE_ROOT; };
+		964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AFNetworking.xcodeproj; path = Libraries/AFNetworking/AFNetworking.xcodeproj; sourceTree = SOURCE_ROOT; };
 		964439311E7C8956002CAF0D /* iTunesXMLParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTunesXMLParserTests.m; sourceTree = "<group>"; };
 		964439331E7C90AF002CAF0D /* topsongs_bad.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = topsongs_bad.xml; path = Mocks/topsongs_bad.xml; sourceTree = "<group>"; };
 		964439351E7CB062002CAF0D /* ScrollDataModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollDataModelTests.m; sourceTree = "<group>"; };
@@ -166,7 +158,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				969232691E7DC730004463DB /* MBProgressHUD.framework in Frameworks */,
-				964439221E7C2F4C002CAF0D /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,20 +290,6 @@
 			name = Libraries;
 			sourceTree = "<group>";
 		};
-		964439091E7C2F35002CAF0D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				964439131E7C2F36002CAF0D /* AFNetworking.framework */,
-				964439151E7C2F36002CAF0D /* AFNetworking.framework */,
-				964439171E7C2F36002CAF0D /* AFNetworking.framework */,
-				964439191E7C2F36002CAF0D /* AFNetworking.framework */,
-				9644391B1E7C2F36002CAF0D /* AFNetworking iOS Tests.xctest */,
-				9644391D1E7C2F36002CAF0D /* AFNetworking Mac OS X Tests.xctest */,
-				9644391F1E7C2F36002CAF0D /* AFNetworking tvOS Tests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		969232501E7CBD23004463DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +320,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9692326A1E7DC9D6004463DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				969232741E7DC9D6004463DB /* AFNetworking.framework */,
+				969232761E7DC9D6004463DB /* AFNetworking.framework */,
+				969232781E7DC9D6004463DB /* AFNetworking.framework */,
+				9692327A1E7DC9D6004463DB /* AFNetworking.framework */,
+				9692327C1E7DC9D6004463DB /* AFNetworking iOS Tests.xctest */,
+				9692327E1E7DC9D6004463DB /* AFNetworking Mac OS X Tests.xctest */,
+				969232801E7DC9D6004463DB /* AFNetworking tvOS Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -358,7 +349,6 @@
 			);
 			dependencies = (
 				969232681E7DC729004463DB /* PBXTargetDependency */,
-				964439211E7C2F45002CAF0D /* PBXTargetDependency */,
 			);
 			name = InfiniteScroll;
 			productName = InfiniteScroll;
@@ -416,7 +406,7 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 964439091E7C2F35002CAF0D /* Products */;
+					ProductGroup = 9692326A1E7DC9D6004463DB /* Products */;
 					ProjectRef = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
 				},
 				{
@@ -433,55 +423,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		964439131E7C2F36002CAF0D /* AFNetworking.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AFNetworking.framework;
-			remoteRef = 964439121E7C2F36002CAF0D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		964439151E7C2F36002CAF0D /* AFNetworking.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AFNetworking.framework;
-			remoteRef = 964439141E7C2F36002CAF0D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		964439171E7C2F36002CAF0D /* AFNetworking.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AFNetworking.framework;
-			remoteRef = 964439161E7C2F36002CAF0D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		964439191E7C2F36002CAF0D /* AFNetworking.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AFNetworking.framework;
-			remoteRef = 964439181E7C2F36002CAF0D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9644391B1E7C2F36002CAF0D /* AFNetworking iOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "AFNetworking iOS Tests.xctest";
-			remoteRef = 9644391A1E7C2F36002CAF0D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9644391D1E7C2F36002CAF0D /* AFNetworking Mac OS X Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "AFNetworking Mac OS X Tests.xctest";
-			remoteRef = 9644391C1E7C2F36002CAF0D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9644391F1E7C2F36002CAF0D /* AFNetworking tvOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "AFNetworking tvOS Tests.xctest";
-			remoteRef = 9644391E1E7C2F36002CAF0D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		969232641E7DC716004463DB /* libMBProgressHUD.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -494,6 +435,55 @@
 			fileType = wrapper.framework;
 			path = MBProgressHUD.framework;
 			remoteRef = 969232651E7DC716004463DB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969232741E7DC9D6004463DB /* AFNetworking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AFNetworking.framework;
+			remoteRef = 969232731E7DC9D6004463DB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969232761E7DC9D6004463DB /* AFNetworking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AFNetworking.framework;
+			remoteRef = 969232751E7DC9D6004463DB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969232781E7DC9D6004463DB /* AFNetworking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AFNetworking.framework;
+			remoteRef = 969232771E7DC9D6004463DB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9692327A1E7DC9D6004463DB /* AFNetworking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AFNetworking.framework;
+			remoteRef = 969232791E7DC9D6004463DB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9692327C1E7DC9D6004463DB /* AFNetworking iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AFNetworking iOS Tests.xctest";
+			remoteRef = 9692327B1E7DC9D6004463DB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9692327E1E7DC9D6004463DB /* AFNetworking Mac OS X Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AFNetworking Mac OS X Tests.xctest";
+			remoteRef = 9692327D1E7DC9D6004463DB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		969232801E7DC9D6004463DB /* AFNetworking tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AFNetworking tvOS Tests.xctest";
+			remoteRef = 9692327F1E7DC9D6004463DB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -558,11 +548,6 @@
 			isa = PBXTargetDependency;
 			target = 964436F71E75EC47002CAF0D /* InfiniteScroll */;
 			targetProxy = 964437121E75EC47002CAF0D /* PBXContainerItemProxy */;
-		};
-		964439211E7C2F45002CAF0D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "AFNetworking iOS";
-			targetProxy = 964439201E7C2F45002CAF0D /* PBXContainerItemProxy */;
 		};
 		969232681E7DC729004463DB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
