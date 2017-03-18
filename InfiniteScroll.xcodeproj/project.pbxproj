@@ -30,6 +30,7 @@
 		964439381E7CB38E002CAF0D /* UILabelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 964439371E7CB38E002CAF0D /* UILabelTests.m */; };
 		9644393A1E7CB828002CAF0D /* ScrollViewALViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 964439391E7CB828002CAF0D /* ScrollViewALViewControllerTests.m */; };
 		969232521E7CBD24004463DB /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 969232511E7CBD24004463DB /* libOCMock.a */; };
+		969232541E7DC1DC004463DB /* CGGFramesScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 969232531E7DC1DC004463DB /* CGGFramesScrollViewTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +157,7 @@
 		964439371E7CB38E002CAF0D /* UILabelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILabelTests.m; sourceTree = "<group>"; };
 		964439391E7CB828002CAF0D /* ScrollViewALViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewALViewControllerTests.m; sourceTree = "<group>"; };
 		969232511E7CBD24004463DB /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = OCMock/libOCMock.a; sourceTree = "<group>"; };
+		969232531E7DC1DC004463DB /* CGGFramesScrollViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGFramesScrollViewTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,12 +222,8 @@
 		964437141E75EC47002CAF0D /* InfiniteScrollTests */ = {
 			isa = PBXGroup;
 			children = (
-				964437151E75EC47002CAF0D /* InfiniteScrollTests.m */,
+				969232551E7DC1ED004463DB /* Tests */,
 				964437171E75EC47002CAF0D /* Info.plist */,
-				964439311E7C8956002CAF0D /* iTunesXMLParserTests.m */,
-				964439351E7CB062002CAF0D /* ScrollDataModelTests.m */,
-				964439371E7CB38E002CAF0D /* UILabelTests.m */,
-				964439391E7CB828002CAF0D /* ScrollViewALViewControllerTests.m */,
 			);
 			path = InfiniteScrollTests;
 			sourceTree = "<group>";
@@ -330,6 +328,19 @@
 				969232511E7CBD24004463DB /* libOCMock.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		969232551E7DC1ED004463DB /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				969232531E7DC1DC004463DB /* CGGFramesScrollViewTests.m */,
+				964437151E75EC47002CAF0D /* InfiniteScrollTests.m */,
+				964439311E7C8956002CAF0D /* iTunesXMLParserTests.m */,
+				964439351E7CB062002CAF0D /* ScrollDataModelTests.m */,
+				964439391E7CB828002CAF0D /* ScrollViewALViewControllerTests.m */,
+				964439371E7CB38E002CAF0D /* UILabelTests.m */,
+			);
+			name = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -534,6 +545,7 @@
 				964439321E7C8956002CAF0D /* iTunesXMLParserTests.m in Sources */,
 				964439361E7CB062002CAF0D /* ScrollDataModelTests.m in Sources */,
 				964439381E7CB38E002CAF0D /* UILabelTests.m in Sources */,
+				969232541E7DC1DC004463DB /* CGGFramesScrollViewTests.m in Sources */,
 				964437161E75EC47002CAF0D /* InfiniteScrollTests.m in Sources */,
 				9644393A1E7CB828002CAF0D /* ScrollViewALViewControllerTests.m in Sources */,
 			);

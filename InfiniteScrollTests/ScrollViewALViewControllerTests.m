@@ -15,6 +15,11 @@
 typedef void(^iTunesXMLParserTestBlock)(NSError *error);
 @interface ScrollViewALViewController ()
 - (void)loadData;
+- (NSArray *)dataArray;
+- (void)setDataArray:(NSArray *)array;
+- (UILabel *)labelAtIndex:(NSInteger)index;
+- (NSInteger)numberOfLabels;
+- (void)parsingDidFinishWithData:(NSArray *)data error:(NSError *)error;
 @end
 
 @interface ScrollViewALViewControllerTests : XCTestCase <iTunesXMLParserDelegate, UIScrollViewDelegate>
@@ -62,16 +67,39 @@ typedef void(^iTunesXMLParserTestBlock)(NSError *error);
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     ScrollViewALViewController *allController = [[ScrollViewALViewController alloc] init];
-    [allController viewDidLoad];
+
+    [allController setDataArray:@[[UILabel new], [UILabel new]]];
+
+    XCTAssert([allController labelAtIndex:0] != nil, @"Make sure we get a label back");
+    XCTAssert([allController labelAtIndex:-1] == nil, @"Make sure we do not get a label back");
+    XCTAssert([allController labelAtIndex:44] == nil, @"Make sure we do not get a label back");
+    
+    XCTAssert([allController numberOfLabels] == 2, @"Number of labels is incorrect");
+}
+
+- (void)testParsingDidFinish {
+    ScrollViewALViewController *allController = [[ScrollViewALViewController alloc] init];
     
     // create a partial mock for that object
     id mock = [OCMockObject partialMockForObject:allController];
     // tell the mock object what you expect
-    [[mock expect] loadData];
+    [[mock expect] setDataArray:[OCMArg isNotNil]];
     // call the actual method on the mock object
     [mock viewDidLoad];
+    
+    [mock parsingDidFinishWithData:[OCMArg isNotNil] error:[OCMArg isNil]];
     // and finally verify
     [mock verify];
+    
+}
+
+- (void)testMemoryWarning {
+    ScrollViewALViewController *allController = [[ScrollViewALViewController alloc] init];
+    [allController viewDidLoad];
+    
+    [allController didReceiveMemoryWarning];
+    
+    XCTAssertNil(allController.dataArray, "Data array should be nil after memory warning");
 }
 
 - (void)testPerformanceExample {

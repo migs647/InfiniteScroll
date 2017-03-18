@@ -51,6 +51,17 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
     return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self)
+    {
+        [self configure];
+    }
+    
+    return self;
+}
+
 - (void)dealloc
 {
     // Make sure we aren't watching any rotation issues any more
