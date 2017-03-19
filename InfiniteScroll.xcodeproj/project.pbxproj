@@ -14,7 +14,6 @@
 		964437081E75EC47002CAF0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 964437071E75EC47002CAF0D /* Assets.xcassets */; };
 		9644370B1E75EC47002CAF0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 964437091E75EC47002CAF0D /* LaunchScreen.storyboard */; };
 		964437161E75EC47002CAF0D /* InfiniteScrollTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 964437151E75EC47002CAF0D /* InfiniteScrollTests.m */; };
-		964437251E760F75002CAF0D /* ScrollDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 964437241E760F75002CAF0D /* ScrollDataModel.m */; };
 		9644372C1E76126E002CAF0D /* topsongs.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9644372B1E76126E002CAF0D /* topsongs.xml */; };
 		9644372F1E762540002CAF0D /* iTunesXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9644372E1E762540002CAF0D /* iTunesXMLParser.m */; };
 		964438731E7A40CC002CAF0D /* ScrollViewFramesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 964438721E7A40CC002CAF0D /* ScrollViewFramesViewController.m */; };
@@ -27,6 +26,9 @@
 		969232BB1E7DCC2B004463DB /* CGGInfiniteScrollView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969232B81E7DCC1B004463DB /* CGGInfiniteScrollView.framework */; };
 		969232BC1E7DCC2B004463DB /* CGGInfiniteScrollView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 969232B81E7DCC1B004463DB /* CGGInfiniteScrollView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		969232DB1E7DD0F0004463DB /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 969232DA1E7DD0F0004463DB /* libOCMock.a */; };
+		969232FF1E7F3BA4004463DB /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969232741E7DC9D6004463DB /* AFNetworking.framework */; };
+		969233001E7F3BAD004463DB /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 969232741E7DC9D6004463DB /* AFNetworking.framework */; };
+		969233011E7F3BAD004463DB /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 969232741E7DC9D6004463DB /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,20 @@
 			remoteGlobalIDString = 9692328A1E7DCB76004463DB;
 			remoteInfo = CGGInfiniteScrollView;
 		};
+		969232F41E7F3B9E004463DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 299522381BBF104D00859F49;
+			remoteInfo = "AFNetworking iOS";
+		};
+		969233021E7F3BAD004463DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 964439081E7C2F35002CAF0D /* AFNetworking.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 299522381BBF104D00859F49;
+			remoteInfo = "AFNetworking iOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -138,6 +154,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				969232BC1E7DCC2B004463DB /* CGGInfiniteScrollView.framework in Embed Frameworks */,
+				969233011E7F3BAD004463DB /* AFNetworking.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,8 +175,6 @@
 		964437111E75EC47002CAF0D /* InfiniteScrollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfiniteScrollTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		964437151E75EC47002CAF0D /* InfiniteScrollTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollTests.m; sourceTree = "<group>"; };
 		964437171E75EC47002CAF0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		964437231E760F75002CAF0D /* ScrollDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollDataModel.h; sourceTree = "<group>"; };
-		964437241E760F75002CAF0D /* ScrollDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollDataModel.m; sourceTree = "<group>"; };
 		9644372B1E76126E002CAF0D /* topsongs.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = topsongs.xml; path = Mocks/topsongs.xml; sourceTree = "<group>"; };
 		9644372D1E762540002CAF0D /* iTunesXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunesXMLParser.h; sourceTree = "<group>"; };
 		9644372E1E762540002CAF0D /* iTunesXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTunesXMLParser.m; sourceTree = "<group>"; };
@@ -184,6 +199,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				969232FF1E7F3BA4004463DB /* AFNetworking.framework in Frameworks */,
+				969233001E7F3BAD004463DB /* AFNetworking.framework in Frameworks */,
 				969232BB1E7DCC2B004463DB /* CGGInfiniteScrollView.framework in Frameworks */,
 				969232691E7DC730004463DB /* MBProgressHUD.framework in Frameworks */,
 			);
@@ -250,8 +267,6 @@
 		964437261E761100002CAF0D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				964437231E760F75002CAF0D /* ScrollDataModel.h */,
-				964437241E760F75002CAF0D /* ScrollDataModel.m */,
 				9644372D1E762540002CAF0D /* iTunesXMLParser.h */,
 				9644372E1E762540002CAF0D /* iTunesXMLParser.m */,
 			);
@@ -373,8 +388,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				969232F51E7F3B9E004463DB /* PBXTargetDependency */,
 				969232681E7DC729004463DB /* PBXTargetDependency */,
 				969232BE1E7DCC2B004463DB /* PBXTargetDependency */,
+				969233031E7F3BAD004463DB /* PBXTargetDependency */,
 			);
 			name = InfiniteScroll;
 			productName = InfiniteScroll;
@@ -561,7 +578,6 @@
 			files = (
 				9644372F1E762540002CAF0D /* iTunesXMLParser.m in Sources */,
 				964437031E75EC47002CAF0D /* ViewController.m in Sources */,
-				964437251E760F75002CAF0D /* ScrollDataModel.m in Sources */,
 				964437001E75EC47002CAF0D /* AppDelegate.m in Sources */,
 				964438761E7A40DB002CAF0D /* ScrollViewALViewController.m in Sources */,
 				964436FD1E75EC47002CAF0D /* main.m in Sources */,
@@ -597,6 +613,16 @@
 			isa = PBXTargetDependency;
 			name = CGGInfiniteScrollView;
 			targetProxy = 969232BD1E7DCC2B004463DB /* PBXContainerItemProxy */;
+		};
+		969232F51E7F3B9E004463DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AFNetworking iOS";
+			targetProxy = 969232F41E7F3B9E004463DB /* PBXContainerItemProxy */;
+		};
+		969233031E7F3BAD004463DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AFNetworking iOS";
+			targetProxy = 969233021E7F3BAD004463DB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

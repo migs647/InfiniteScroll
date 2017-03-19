@@ -1,20 +1,20 @@
 //
-//  ScrollDataModel.m
+//  CGGScrollDataModel.m
 //  InfiniteScroll
 //
 //  Created by Cody Garvin on 3/12/17.
 //  Copyright © 2017 Cody Garvin. All rights reserved.
 //
 
-#import "ScrollDataModel.h"
+#import "CGGScrollDataModel.h"
 
-@interface ScrollDataModel ()
+@interface CGGScrollDataModel ()
 @property (nonatomic, copy, readwrite) NSString * _Nonnull text;
 @property (nonatomic, copy, readwrite) NSURL * _Nullable imageURL;
 
 @end
 
-@implementation ScrollDataModel
+@implementation CGGScrollDataModel
 - (instancetype _Nonnull)initWithText:(NSString * _Nonnull)text
                              imageURL:(NSString * _Nullable)urlString
 {
@@ -30,6 +30,6 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"ScrollDataModel: %@ - %@", _text, _imageURL];
+    return [NSString stringWithFormat:@"CGGScrollDataModel: %@ - %@", _text, _imageURL];
 }
 @end

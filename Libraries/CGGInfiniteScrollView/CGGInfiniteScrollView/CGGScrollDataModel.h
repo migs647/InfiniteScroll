@@ -1,5 +1,5 @@
 //
-//  ScrollDataModel.h
+//  CGGScrollDataModel.h
 //  InfiniteScroll
 //
 //  Created by Cody Garvin on 3/12/17.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ScrollDataModel : NSObject
+@interface CGGScrollDataModel : NSObject
 @property (nonatomic, copy, readonly) NSString * _Nonnull text;
 @property (nonatomic, copy, readonly) NSURL * _Nullable imageURL;
 

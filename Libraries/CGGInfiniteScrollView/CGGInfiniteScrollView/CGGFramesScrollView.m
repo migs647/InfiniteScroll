@@ -112,23 +112,23 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
     
 }
 
-- (void)reloadLabelAtIndex:(NSInteger)index
+- (BOOL)reloadLabelForTag:(NSInteger)tag
 {
     // Don't allow fluffery
-    if (index < 0)
+    if (tag < 0)
     {
-        return;
+        return NO;
     }
     
     // Grab the label from the view so we can use it to look up index in the
     // labels laidout
-    UILabel *label = [self.currentContainerView viewWithTag:index];
+    UILabel *label = [self.currentContainerView viewWithTag:tag];
     
     // Protect against accidental look ups
     if (!label || ![label isKindOfClass:[UILabel class]])
     {
         NSLog(@"Error: Failed to look up class");
-        return;
+        return NO;
     }
     
     // Grab the index of the object in our layout array to start from there
@@ -172,6 +172,8 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
          
      }
      completion:nil];
+    
+    return YES;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -361,15 +363,20 @@ typedef NS_ENUM(NSUInteger, CGGFramesScrollViewDirection) {
 - (void)labelTapped:(UITapGestureRecognizer *)tapGesture
 {
     NSLog(@"View: %@", tapGesture.view);
-    [self reloadLabelAtIndex:tapGesture.view.tag];
+    [self reloadLabelForTag:tapGesture.view.tag];
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Orientation Methods
+- (UIDeviceOrientation)currentOrientation
+{
+    UIDeviceOrientation currentOrientation = [[UIDevice currentDevice] orientation];
+    return currentOrientation;
+}
+
 - (void)orientationChanged:(NSNotification *)notification
 {
-    
-    UIDeviceOrientation currentOrientation = [[UIDevice currentDevice] orientation];
+    UIDeviceOrientation currentOrientation = [self currentOrientation];
     NSLog(@"Orientation: %zd", currentOrientation);
     // We rotated
     if (currentOrientation == UIDeviceOrientationLandscapeLeft ||

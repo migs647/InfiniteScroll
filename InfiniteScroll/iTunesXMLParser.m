@@ -7,7 +7,7 @@
 //
 
 #import "iTunesXMLParser.h"
-#import "ScrollDataModel.h"
+#import <CGGInfiniteScrollView/CGGInfiniteScrollView.h>
 
 @interface iTunesXMLParser () <NSXMLParserDelegate>
 @property (nonatomic, copy) NSString *currentTag;
@@ -79,11 +79,11 @@
 {
     if ([elementName isEqualToString:@"entry"])
     {
-        ScrollDataModel *dataModel = [[ScrollDataModel alloc]
-                                      initWithText:[NSString stringWithFormat:@"%@\n%@",
-                                                    self.currentTitle,
-                                                    @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lectus nisi, consequat id urna vitae, feugiat placerat leo. Integer id pharetra nunc, at fringilla eros. Phasellus euismod quam maximus est."]
-                                      imageURL:self.currentImage];
+        CGGScrollDataModel *dataModel = [[CGGScrollDataModel alloc]
+                                         initWithText:[NSString stringWithFormat:@"%@\n%@",
+                                                       self.currentTitle,
+                                                       @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lectus nisi, consequat id urna vitae, feugiat placerat leo. Integer id pharetra nunc, at fringilla eros. Phasellus euismod quam maximus est."]
+                                         imageURL:self.currentImage];
         
         [self.dataArray addObject:dataModel];
         self.inEntry = nil;

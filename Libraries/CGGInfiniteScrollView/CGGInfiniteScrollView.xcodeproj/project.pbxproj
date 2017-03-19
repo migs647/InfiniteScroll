@@ -18,6 +18,9 @@
 		969232C21E7DCCD1004463DB /* CGGFramesScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 969232C01E7DCCD1004463DB /* CGGFramesScrollViewTests.m */; };
 		969232C31E7DCCD1004463DB /* UILabelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 969232C11E7DCCD1004463DB /* UILabelTests.m */; };
 		969232CD1E7DD051004463DB /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 969232CC1E7DD051004463DB /* libOCMock.a */; };
+		969232E11E7F2C32004463DB /* CGGScrollDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 969232DF1E7F2C32004463DB /* CGGScrollDataModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		969232E21E7F2C32004463DB /* CGGScrollDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 969232E01E7F2C32004463DB /* CGGScrollDataModel.m */; };
+		969232F01E7F3931004463DB /* CGGScrollDataModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 969232EF1E7F3931004463DB /* CGGScrollDataModelTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		969232C01E7DCCD1004463DB /* CGGFramesScrollViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGFramesScrollViewTests.m; sourceTree = "<group>"; };
 		969232C11E7DCCD1004463DB /* UILabelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILabelTests.m; sourceTree = "<group>"; };
 		969232CC1E7DD051004463DB /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = ../OCMock/libOCMock.a; sourceTree = "<group>"; };
+		969232DF1E7F2C32004463DB /* CGGScrollDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGScrollDataModel.h; sourceTree = "<group>"; };
+		969232E01E7F2C32004463DB /* CGGScrollDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGScrollDataModel.m; sourceTree = "<group>"; };
+		969232EF1E7F3931004463DB /* CGGScrollDataModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGScrollDataModelTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				969232C01E7DCCD1004463DB /* CGGFramesScrollViewTests.m */,
-				969232C11E7DCCD1004463DB /* UILabelTests.m */,
+				969232EF1E7F3931004463DB /* CGGScrollDataModelTests.m */,
 				9692329B1E7DCB76004463DB /* Info.plist */,
+				969232C11E7DCCD1004463DB /* UILabelTests.m */,
 			);
 			path = CGGInfiniteScrollViewTests;
 			sourceTree = "<group>";
@@ -109,12 +116,9 @@
 		969232B11E7DCBB3004463DB /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				969232A51E7DCBAC004463DB /* CGGALScrollView.h */,
-				969232A61E7DCBAC004463DB /* CGGALScrollView.m */,
-				969232A71E7DCBAC004463DB /* CGGFramesScrollView.h */,
-				969232A81E7DCBAC004463DB /* CGGFramesScrollView.m */,
-				969232A91E7DCBAC004463DB /* UILabel+.h */,
-				969232AA1E7DCBAC004463DB /* UILabel+.m */,
+				969232E41E7F2C3E004463DB /* Categories */,
+				969232E51E7F2C4E004463DB /* Model */,
+				969232E31E7F2C34004463DB /* View */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -127,6 +131,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		969232E31E7F2C34004463DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				969232A51E7DCBAC004463DB /* CGGALScrollView.h */,
+				969232A61E7DCBAC004463DB /* CGGALScrollView.m */,
+				969232A71E7DCBAC004463DB /* CGGFramesScrollView.h */,
+				969232A81E7DCBAC004463DB /* CGGFramesScrollView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		969232E41E7F2C3E004463DB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				969232A91E7DCBAC004463DB /* UILabel+.h */,
+				969232AA1E7DCBAC004463DB /* UILabel+.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		969232E51E7F2C4E004463DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				969232DF1E7F2C32004463DB /* CGGScrollDataModel.h */,
+				969232E01E7F2C32004463DB /* CGGScrollDataModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -135,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				969232AD1E7DCBAC004463DB /* CGGFramesScrollView.h in Headers */,
+				969232E11E7F2C32004463DB /* CGGScrollDataModel.h in Headers */,
 				969232AF1E7DCBAC004463DB /* UILabel+.h in Headers */,
 				9692329C1E7DCB76004463DB /* CGGInfiniteScrollView.h in Headers */,
 				969232AB1E7DCBAC004463DB /* CGGALScrollView.h in Headers */,
@@ -241,6 +275,7 @@
 			files = (
 				969232B01E7DCBAC004463DB /* UILabel+.m in Sources */,
 				969232AC1E7DCBAC004463DB /* CGGALScrollView.m in Sources */,
+				969232E21E7F2C32004463DB /* CGGScrollDataModel.m in Sources */,
 				969232AE1E7DCBAC004463DB /* CGGFramesScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				969232C31E7DCCD1004463DB /* UILabelTests.m in Sources */,
+				969232F01E7F3931004463DB /* CGGScrollDataModelTests.m in Sources */,
 				969232C21E7DCCD1004463DB /* CGGFramesScrollViewTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

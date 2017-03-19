@@ -10,9 +10,8 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 
 #import "ScrollViewFramesViewController.h"
-#import "ScrollDataModel.h"
 #import "iTunesXMLParser.h"
-#import <CGGInfiniteScrollView/CGGFramesScrollView.h>
+#import <CGGInfiniteScrollView/CGGInfiniteScrollView.h>
 
 @interface ScrollViewFramesViewController () <CGGFramesScrollViewDataSource, iTunesXMLParserDelegate>
 @property (nonatomic, strong) NSArray *scrollData;
@@ -102,7 +101,7 @@
     UILabel *returnLabel = nil;
     if ([_dataArray count] > index)
     {
-        ScrollDataModel *dataModel = [_dataArray objectAtIndex:index];
+        CGGScrollDataModel *dataModel = [_dataArray objectAtIndex:index];
         returnLabel = [[UILabel alloc] init];
         returnLabel.text = [NSString stringWithFormat:@"%zd - %@", index+1, dataModel.text];
         returnLabel.tag = index;

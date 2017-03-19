@@ -47,7 +47,9 @@ IB_DESIGNABLE @interface CGGFramesScrollView : UIScrollView
  Reloads a label at a specified index. This entails asking for a new label, possibly 
  with new attributes.
 
- @param index The index of the cell that is to be replaced.
+ @param tag The index of the cell that is to be replaced. These tags should match
+ the tag of the label that is attempted to be reloaded.
+ @return If the reload was successful.
  */
-- (void)reloadLabelAtIndex:(NSInteger)index;
+- (BOOL)reloadLabelForTag:(NSInteger)tag;
 @end
