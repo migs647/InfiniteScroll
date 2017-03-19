@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, CGGALScrollViewScrollDirection) {
     if (self)
     {
         // Hide the scroll indicator so we can appear seemless
-        [self setShowsVerticalScrollIndicator:NO];
+        [self configure];
     }
     
     return self;
@@ -44,10 +44,16 @@ typedef NS_ENUM(NSUInteger, CGGALScrollViewScrollDirection) {
     if (self)
     {
         // Hide the scroll indicator so we can appear seemless
-        [self setShowsVerticalScrollIndicator:NO];
+        [self configure];
     }
     
     return self;
+}
+
+- (void)configure
+{
+    // Hide the scroll indicator so we can appear seemless
+    [self setShowsVerticalScrollIndicator:NO];
 }
 
 ////////////////////////////////////////////////////////////////////////////////

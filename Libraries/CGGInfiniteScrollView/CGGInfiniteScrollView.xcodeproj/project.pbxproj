@@ -21,6 +21,7 @@
 		969232E11E7F2C32004463DB /* CGGScrollDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 969232DF1E7F2C32004463DB /* CGGScrollDataModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		969232E21E7F2C32004463DB /* CGGScrollDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 969232E01E7F2C32004463DB /* CGGScrollDataModel.m */; };
 		969232F01E7F3931004463DB /* CGGScrollDataModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 969232EF1E7F3931004463DB /* CGGScrollDataModelTests.m */; };
+		969233081E7F44B7004463DB /* CGGALScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 969233071E7F44B7004463DB /* CGGALScrollViewTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		969232DF1E7F2C32004463DB /* CGGScrollDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGScrollDataModel.h; sourceTree = "<group>"; };
 		969232E01E7F2C32004463DB /* CGGScrollDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGScrollDataModel.m; sourceTree = "<group>"; };
 		969232EF1E7F3931004463DB /* CGGScrollDataModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGScrollDataModelTests.m; sourceTree = "<group>"; };
+		969233071E7F44B7004463DB /* CGGALScrollViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGALScrollViewTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		969232981E7DCB76004463DB /* CGGInfiniteScrollViewTests */ = {
 			isa = PBXGroup;
 			children = (
+				969233071E7F44B7004463DB /* CGGALScrollViewTests.m */,
 				969232C01E7DCCD1004463DB /* CGGFramesScrollViewTests.m */,
 				969232EF1E7F3931004463DB /* CGGScrollDataModelTests.m */,
 				9692329B1E7DCB76004463DB /* Info.plist */,
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				969233081E7F44B7004463DB /* CGGALScrollViewTests.m in Sources */,
 				969232C31E7DCCD1004463DB /* UILabelTests.m in Sources */,
 				969232F01E7F3931004463DB /* CGGScrollDataModelTests.m in Sources */,
 				969232C21E7DCCD1004463DB /* CGGFramesScrollViewTests.m in Sources */,
