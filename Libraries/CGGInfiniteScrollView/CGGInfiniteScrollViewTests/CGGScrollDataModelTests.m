@@ -26,6 +26,15 @@
     [super tearDown];
 }
 
+- (void)testModelConverted {
+    // This is an example of a functional test case.
+    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    CGGScrollDataModel *dataModel = [[CGGScrollDataModel alloc] initWithText:@"test1" imageURL:@"testURL"];
+    XCTAssertTrue([dataModel.text isEqualToString:@"test1"], @"Image text did not save");
+    XCTAssertNotNil(dataModel.imageURL, @"image url failed to convert");
+}
+
 - (void)testDescription {
 
     CGGScrollDataModel *test = [[CGGScrollDataModel alloc] initWithText:@"Test" imageURL:@"image.jpg"];

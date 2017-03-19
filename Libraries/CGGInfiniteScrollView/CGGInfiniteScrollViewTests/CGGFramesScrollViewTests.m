@@ -26,6 +26,9 @@ typedef UILabel* (^LabelAtIndexBlock)();
 - (void)addLabels;
 - (void)orientationChanged:(NSNotification *)notification;
 - (UIDeviceOrientation)currentOrientation;
+- (void)labelTapped:(UITapGestureRecognizer *)tapGesture;
+- (void)adjustLabelLayoutMin:(CGFloat)min toMax:(CGFloat)max;
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView;
 @end
 
 @interface CGGFramesScrollViewTests : XCTestCase <CGGFramesScrollViewDataSource>
@@ -68,6 +71,18 @@ typedef UILabel* (^LabelAtIndexBlock)();
     NSLog(@"Blah: %@", blah);
     [mock verify];
 }
+
+//- (void)testInitWithCoder {
+//    
+//    OCMClassMock([CGGFramesScrollView class]);
+//    CGGFramesScrollView *scrollView = [[CGGFramesScrollView alloc] initWithFrame:CGRectZero];
+//    id mock = [OCMockObject partialMockForObject:scrollView];
+//    [mock setExpectationOrderMatters:YES];
+//    [[mock expect] configure];
+//    id blah = [mock initWithCoder:[OCMArg isNotNil]];
+//    NSLog(@"Blah: %@", blah);
+//    [mock verify];
+//}
 
 - (void)testConfigure {
     
@@ -148,6 +163,38 @@ typedef UILabel* (^LabelAtIndexBlock)();
     
     CGPoint newestContentOffset = scrollView.contentOffset;
     XCTAssert(newestContentOffset.y - originalContentOffset.y == 768, "Offset calculation is incorrect");
+    
+}
+
+- (void)testCurrentOrientation {
+    
+    id mock = OCMClassMock([UIDevice class]);
+    OCMStub([mock currentDevice]).andReturn(mock);
+    OCMStub([mock orientation]).andReturn(UIDeviceOrientationPortrait);
+
+    CGGFramesScrollView *scrollView = [[CGGFramesScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 768)];
+    [scrollView currentOrientation];
+    
+    OCMVerify([mock orientation]);
+}
+
+- (void)testLabelTapped {
+    CGGFramesScrollView *scrollView = [[CGGFramesScrollView alloc] init];
+    id mock = [OCMockObject partialMockForObject:scrollView];
+    [mock setExpectationOrderMatters:YES];
+    [[[mock expect] ignoringNonObjectArgs] reloadLabelForTag:1];
+    [mock labelTapped:nil];
+    [mock verify];
+}
+
+- (void)testScrollViewDidScroll {
+    CGGFramesScrollView *scrollView = [[CGGFramesScrollView alloc] init];
+    id mock = [OCMockObject partialMockForObject:scrollView];
+    [mock setExpectationOrderMatters:YES];
+    [[mock expect] calibratePosition];
+    [[[mock expect] ignoringNonObjectArgs] adjustLabelLayoutMin:0 toMax:10];
+    [mock scrollViewDidScroll:[OCMArg isNotNil]];
+    [mock verify];
     
 }
 
